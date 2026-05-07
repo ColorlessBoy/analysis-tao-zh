@@ -127,6 +127,57 @@ body.lang-zh  .en-only { display: none; }
 }
 
 /* ============================================================
+   Hamburger Button
+   ============================================================ */
+.hamburger-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  margin-right: 8px;
+  border-radius: 6px;
+  color: var(--text);
+  transition: background 0.2s, color 0.2s;
+}
+
+.hamburger-btn:hover {
+  background: var(--bg-hover);
+  color: var(--accent);
+}
+
+.hamburger-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.hamburger-btn svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+/* ============================================================
+   Sidebar Overlay (mobile)
+   ============================================================ */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 150;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+body.sidebar-open .sidebar-overlay {
+  display: block;
+  opacity: 1;
+}
+
+/* ============================================================
    Control Buttons (lang + theme)
    ============================================================ */
 .ctrl-btn {
@@ -429,29 +480,52 @@ body.lang-zh  .en-only { display: none; }
    Responsive
    ============================================================ */
 @media (max-width: 900px) {
-  .sidebar {
-    position: static;
-    width: 100%;
-    min-width: unset;
-    height: auto;
-    max-height: none;
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-    padding: 12px 0 20px;
+  /* Show hamburger, hide sidebar by default */
+  .hamburger-btn {
+    display: flex;
   }
 
-  .page-body { flex-direction: column; }
+  /* Sidebar becomes a fixed slide-out drawer */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-w);
+    min-width: var(--sidebar-w);
+    height: 100vh;
+    z-index: 200;
+    border-right: 1px solid var(--border);
+    border-bottom: none;
+    padding: 24px 0 40px;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  }
+
+  body.sidebar-open .sidebar {
+    transform: translateX(0);
+  }
+
+  .page-body {
+    flex-direction: column;
+  }
 
   .main-content {
     padding: 28px 24px 60px;
+    max-width: 100%;
   }
 }
 
 @media (max-width: 600px) {
-  .header-inner { padding: 0 16px; }
+  .header-inner { padding: 0 12px 0 8px; }
   .site-title { font-size: 0.9rem; }
   .sec-title { font-size: 1.5rem; }
   .ctrl-btn { padding: 6px 10px; }
   .lang-label { display: none; }
   .main-content { padding: 20px 16px 48px; }
+
+  /* Sidebar takes full width on very small screens */
+  .sidebar {
+    width: min(var(--sidebar-w), 85vw);
+    min-width: min(var(--sidebar-w), 85vw);
+  }
 }

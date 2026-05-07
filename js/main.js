@@ -13,6 +13,7 @@ let currentLang   = localStorage.getItem('lang')   || 'zh';
 let currentTheme  = localStorage.getItem('theme')  || 'light';
 let currentSection = { chapter: 1, section: '1.1' };
 let openChapters   = new Set([1]);  // chapters expanded by default
+let sidebarOpen    = false;  // mobile sidebar state
 
 /* ------------------------------------------------------------
  * Init
@@ -27,6 +28,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Wire up control buttons
   document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
   document.getElementById('lang-toggle')?.addEventListener('click', toggleLanguage);
+  document.getElementById('hamburger')?.addEventListener('click', toggleSidebar);
+  document.getElementById('sidebar-overlay')?.addEventListener('click', closeSidebar);
 });
 
 /* ------------------------------------------------------------
@@ -163,6 +166,30 @@ function navigate(chapterNum, sectionNum) {
   renderSidebar();
   renderSection();
   window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Close sidebar on mobile after navigating
+  closeSidebar();
+}
+
+/* ------------------------------------------------------------
+ * Mobile sidebar
+ * ------------------------------------------------------------ */
+function toggleSidebar() {
+  sidebarOpen = !sidebarOpen;
+  document.body.classList.toggle('sidebar-open', sidebarOpen);
+  const btn = document.getElementById('hamburger');
+  if (btn) {
+    btn.setAttribute('aria-label', sidebarOpen ? '关闭导航' : '打开导航');
+  }
+}
+
+function closeSidebar() {
+  sidebarOpen = false;
+  document.body.classList.remove('sidebar-open');
+  const btn = document.getElementById('hamburger');
+  if (btn) {
+    btn.setAttribute('aria-label', '打开导航');
+  }
 }
 
 /* ------------------------------------------------------------
@@ -288,6 +315,8 @@ function inlineFormat(text) {
 /* ------------------------------------------------------------
  * Expose to global scope for onclick handlers
  * ------------------------------------------------------------ */
-window.toggleTheme   = toggleTheme;
+window.toggleTheme    = toggleTheme;
 window.toggleLanguage = toggleLanguage;
-window.navigate      = navigate;
+window.navigate       = navigate;
+window.toggleSidebar  = toggleSidebar;
+window.closeSidebar   = closeSidebar;
