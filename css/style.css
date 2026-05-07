@@ -432,7 +432,45 @@ body.sidebar-open .sidebar-overlay {
 .sec-body strong { font-weight: 700; }
 .sec-body em     { font-style: italic; }
 
-/* Theorem / Definition blocks */
+/* ============================================================
+   Math Boxes — academic textbook environments
+   ============================================================ */
+.math-box {
+  background: var(--code-bg);
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+
+.math-box.definition  { border-left-color: #2563eb; }
+.math-box.axiom       { border-left-color: #7c3aed; }
+.math-box.theorem     { border-left-color: #dc2626; }
+.math-box.proposition { border-left-color: #ea580c; }
+.math-box.lemma       { border-left-color: #0891b2; }
+.math-box.corollary   { border-left-color: #16a34a; }
+.math-box.remark      { border-left-color: #9333ea; }
+.math-box.exercise    { border-left-color: #ca8a04; }
+.math-box.example     { border-left-color: #64748b; }
+
+.math-box strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.97rem;
+  font-weight: 700;
+}
+
+.math-box .math-box-body {
+  margin-top: 6px;
+}
+
+[data-theme="dark"] .math-box {
+  background: #252525;
+}
+
+/* ============================================================
+   Theorem / Definition (legacy)
+   ============================================================ */
 .sec-body .theorem,
 .sec-body .definition,
 .sec-body .exercise {

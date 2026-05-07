@@ -264,31 +264,90 @@ function renderSection() {
  *   - bold *text*
  *   - italic _text_
  *   - math $...$ and $$...$$
+ *   - Definition / Axiom / Theorem / Proposition / Lemma / Corollary / Remark / Exercise / Example → styled boxes
  */
 function renderBody(text) {
   if (!text) return '';
 
-  // Split into paragraphs on blank lines
-  const paras = text.split(/\n\n+/);
+  const boxPatterns = [
+    { label: 'Definition',  cls: 'definition', zh: '定义' },
+    { label: 'Axiom',      cls: 'axiom',       zh: '公理' },
+    { label: 'Theorem',    cls: 'theorem',     zh: '定理' },
+    { label: 'Proposition',cls: 'proposition',  zh: '命题' },
+    { label: 'Lemma',      cls: 'lemma',       zh: '引理' },
+    { label: 'Corollary',  cls: 'corollary',   zh: '推论' },
+    { label: 'Remark',     cls: 'remark',      zh: '注' },
+    { label: 'Exercise',   cls: 'exercise',    zh: '练习' },
+    { label: 'Example',    cls: 'example',     zh: '例' },
+  ];
 
+  const lines = text.split('\n');
+  const result = [];
+  let i = 0;
+
+  while (i < lines.length) {
+    const line = lines[i].trim();
+    let matched = false;
+
+    for (const { label, cls, zh } of boxPatterns) {
+      const pat = new RegExp(`^(${label}|${zh})\\s+(\\d+\\.\\d+)\\s*(.*)$`, 'i');
+      const m = line.match(pat);
+      if (m) {
+        const bodyLines = [];
+        i++;
+        while (i < lines.length && lines[i].trim() !== '') {
+          bodyLines.push(lines[i]);
+          i++;
+        }
+
+        const labelText = `${m[1]} ${m[2]}`;
+        const titlePart = m[3]
+          ? `<strong>${labelText} ${m[3]}</strong>`
+          : `<strong>${labelText}</strong>`;
+        const bodyHtml = bodyLines
+          .map(p => `<p>${inlineFormat(p.trim())}</p>`)
+          .join('\n');
+
+        result.push(
+          `<div class="math-box ${cls}">${titlePart}${bodyHtml ? '<div class="math-box-body">' + bodyHtml + '</div>' : ''}</div>`
+        );
+        matched = true;
+        break;
+      }
+    }
+
+    if (!matched) {
+      const paraLines = [];
+      while (i < lines.length && lines[i].trim() !== '') {
+        paraLines.push(lines[i]);
+        i++;
+      }
+      if (paraLines.length > 0) {
+        result.push(...renderParagraphs(paraLines.join('\n')));
+      }
+      i++;
+    }
+  }
+
+  return result.join('\n');
+}
+
+/**
+ * Render normal paragraphs (non-box content).
+ */
+function renderParagraphs(text) {
+  const paras = text.split(/\n\n+/);
   return paras.map(para => {
     const trimmed = para.trim();
     if (!trimmed) return '';
 
-    // Horizontal rule
-    if (/^---+$/.test(trimmed)) {
-      return '<hr>';
-    }
+    if (/^---+$/.test(trimmed)) return '<hr>';
 
-    // Ordered list (lines starting with "1. ")
     if (/^\d+\.\s/m.test(trimmed)) {
-      const items = trimmed.split('\n').map(line =>
-        line.replace(/^\d+\.\s+/, '')
-      );
+      const items = trimmed.split('\n').map(line => line.replace(/^\d+\.\s+/, ''));
       return `<ol>${items.map(item => `<li>${inlineFormat(item)}</li>`).join('')}</ol>`;
     }
 
-    // Unordered list (lines starting with (a), (b), etc. OR -, *)
     if (/^\([a-z]\)|\n\([a-z]\)|^[*-]\s/m.test(trimmed)) {
       const items = trimmed.split('\n').map(line =>
         line.replace(/^[*-]\s+/, '').replace(/^\([a-z]\)\s*/i, '')
@@ -297,7 +356,7 @@ function renderBody(text) {
     }
 
     return `<p>${inlineFormat(trimmed)}</p>`;
-  }).join('\n');
+  });
 }
 
 /**
