@@ -35,16 +35,24 @@ document.addEventListener('DOMContentLoaded', async () => {
   let initChapter = 1;
   let initSection = '1.1';
   if (hash) {
-    // Parse hash: format is "chapter.section" (e.g. "1.2") or "chapter.section.subsection" (e.g. "1.1.1")
-    // initSection should be the FULL section identifier (e.g. "1.2" or "1.1.1")
-    // We determine chapter from the first number before the first dot, and the rest is the section
-    const firstDot = hash.indexOf('.');
-    if (firstDot > 0) {
-      const chapterStr = hash.slice(0, firstDot);       // e.g. "1"
-      const sectionStr = hash.slice(firstDot + 1);     // e.g. "2" for "1.2" or "1.1" for "1.1.1"
-      initChapter = parseInt(chapterStr, 10);
-      // section identifier is chapter.sectionStr (e.g. "1.2" or "1.1.1")
-      initSection = chapterStr + '.' + sectionStr;
+    // Parse hash: format is "chapter.section" (e.g. "1.2"), "chapter" (e.g. "2" → chapter landing),
+    // or "ch2" (e.g. "ch2" → chapter landing)
+    if (hash.startsWith('ch')) {
+      // Chapter landing page, e.g. "ch2" → chapter 2
+      initChapter = parseInt(hash.slice(2), 10) || 1;
+      initSection = '__chapter__';
+    } else {
+      const firstDot = hash.indexOf('.');
+      if (firstDot > 0) {
+        const chapterStr = hash.slice(0, firstDot);
+        const sectionStr = hash.slice(firstDot + 1);
+        initChapter = parseInt(chapterStr, 10);
+        initSection = chapterStr + '.' + sectionStr;
+      } else if (firstDot === -1) {
+        // Bare chapter number like "2" or "3"
+        initChapter = parseInt(hash, 10) || 1;
+        initSection = '__chapter__';
+      }
     }
   }
   navigate(initChapter, initSection);
@@ -138,7 +146,7 @@ function renderSidebar() {
     chHeading.className = 'chapter-heading';
     const chapterPrefix = currentLang === 'zh' ? `第${chapter.number}章` : `Chapter ${chapter.number}`;
     chHeading.textContent = `${chapterPrefix} ${chTitle}`;
-    chHeading.addEventListener('click', () => toggleChapter(chapter.number));
+    chHeading.addEventListener('click', () => navigate(chapter.number, '__chapter__'));
 
     const chSections = document.createElement('div');
     chSections.className = 'chapter-sections';
@@ -190,9 +198,13 @@ function navigate(chapterNum, sectionNum) {
   // Always open the chapter we're navigating to
   openChapters.add(chapterNum);
 
-  // Persist current section in URL hash (e.g. #1.2)
-  // sectionNum already contains the chapter prefix (e.g. "1.2"), so use it directly
-  window.location.hash = `#${sectionNum}`;
+  // Persist current section in URL hash
+  // Use #ch{n} for chapter landing pages, #n.s for section pages
+  if (sectionNum === '__chapter__') {
+    window.location.hash = `#ch${chapterNum}`;
+  } else {
+    window.location.hash = `#${sectionNum}`;
+  }
 
   renderSidebar();
   renderSection();
@@ -234,8 +246,51 @@ function renderSection() {
   if (!chapter) return;
 
   const section = chapter.sections.find(s => s.number === currentSection.section);
-  if (!section) return;
 
+  // ── Chapter landing page ──────────────────────────────────────
+  if (!section || currentSection.section === '__chapter__') {
+    const chTitle    = currentLang === 'zh' ? chapter.title_zh : chapter.title_en;
+    const body       = currentLang === 'zh' ? chapter.content_zh : chapter.content_en;
+    const langLabel  = currentLang === 'zh' ? '中文' : 'EN';
+    const emptyMsg   = currentLang === 'zh' ? '内容待填充…' : 'Content coming soon…';
+    const secLabel   = currentLang === 'zh' ? '章节目录' : 'Contents';
+    const sectionLinks = chapter.sections.map(sec => {
+      const secTitle = currentLang === 'zh' ? sec.title_zh : sec.title_en;
+      return `<div class="chapter-sec-link" data-chapter="${chapter.number}" data-section="${sec.number}">
+        <span class="sec-num">${sec.number}</span><span>${secTitle}</span>
+      </div>`;
+    }).join('');
+
+    content.innerHTML = `
+      <header class="sec-header">
+        <div class="sec-chapter-label">${currentLang === 'zh' ? `第${chapter.number}章` : `Chapter ${chapter.number}`}</div>
+        <h1 class="sec-title">${chTitle}</h1>
+        <div class="sec-meta">
+          <span class="badge badge-lang">${langLabel}</span>
+        </div>
+      </header>
+      <div class="sec-body">
+        ${body ? mergeConsecutiveLists(renderBody(body)) : `<p class="empty-content">${emptyMsg}</p>`}
+        ${sectionLinks ? `<div class="chapter-sec-list">${sectionLinks}</div>` : ''}
+      </div>
+    `;
+
+    // Wire up section links on the chapter page
+    content.querySelectorAll('.chapter-sec-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navigate(parseInt(link.dataset.chapter, 10), link.dataset.section);
+      });
+    });
+
+    if (window.MathJax && MathJax.typesetPromise) {
+      MathJax.startup.promise
+        .then(() => MathJax.typesetPromise([content]))
+        .catch(err => console.warn('[main] MathJax typeset error:', err));
+    }
+    return;
+  }
+
+  // ── Section page ───────────────────────────────────────────────
   const title      = currentLang === 'zh' ? section.title_zh : section.title_en;
   const chTitle    = currentLang === 'zh' ? chapter.title_zh : chapter.title_en;
   const body       = currentLang === 'zh' ? section.content_zh : section.content_en;

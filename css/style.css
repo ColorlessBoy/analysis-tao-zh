@@ -344,6 +344,37 @@ body.is-bookmarked .icon-bookmark-filled { display: block; color: var(--accent);
 }
 .section-link.is-active .sec-num { opacity: 0.75; }
 
+/* Chapter landing page section list */
+.chapter-sec-list {
+  margin-top: 2em;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--border-light);
+}
+.chapter-sec-list .chapter-sec-link {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75em;
+  padding: 0.5em 0.75em;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--text);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+  margin-bottom: 2px;
+  border-radius: 4px;
+}
+.chapter-sec-list .chapter-sec-link:hover {
+  background: var(--bg-hover);
+  color: var(--accent);
+}
+.chapter-sec-list .chapter-sec-link .sec-num {
+  font-weight: 700;
+  opacity: 0.6;
+  font-size: 0.9em;
+  min-width: 2.5em;
+  flex-shrink: 0;
+}
+
 .sec-num {
   font-size: 0.72rem;
   opacity: 0.55;
