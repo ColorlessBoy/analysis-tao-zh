@@ -191,7 +191,8 @@ function navigate(chapterNum, sectionNum) {
   openChapters.add(chapterNum);
 
   // Persist current section in URL hash (e.g. #1.2)
-  window.location.hash = `#${chapterNum}.${sectionNum}`;
+  // sectionNum already contains the chapter prefix (e.g. "1.2"), so use it directly
+  window.location.hash = `#${sectionNum}`;
 
   renderSidebar();
   renderSection();
