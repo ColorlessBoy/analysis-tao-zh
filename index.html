@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Analysis I - 陶哲轩实分析 中文版</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Analysis I · 陶哲轩实分析</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Georgia:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- MathJax -->
   <script>
     window.MathJax = {
       tex: {
@@ -16,27 +22,43 @@
       }
     };
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <div class="header-left">
-      <h1 class="site-title">Analysis I · 陶哲轩实分析</h1>
-    </div>
-    <div class="header-right">
-      <button id="lang-toggle" class="toggle-btn" onclick="toggleLanguage()">中/EN</button>
-      <button id="theme-toggle" class="toggle-btn" onclick="toggleTheme()">☀️</button>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-title" href="#">Analysis I · 陶哲轩实分析</a>
+      <div class="header-controls">
+        <button id="lang-toggle" class="ctrl-btn" aria-label="切换语言">
+          <span class="lang-label">中文</span>
+        </button>
+        <button id="theme-toggle" class="ctrl-btn" aria-label="切换主题">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
-  <div class="container">
-    <nav id="sidebar">
-      <!-- Navigation populated by JS -->
-    </nav>
+  <div class="page-body">
+    <nav id="sidebar" class="sidebar" aria-label="章节导航"></nav>
 
-    <main id="content">
-      <!-- Section content rendered by JS -->
-    </main>
+    <main id="content" class="main-content" tabindex="-1"></main>
   </div>
 
   <script src="js/main.js"></script>
