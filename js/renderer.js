@@ -23,8 +23,10 @@ window.Renderer = {
     const processedBody = body ? this.renderBody(body) : '';
     const mergedBody = this.mergeConsecutiveLists(processedBody);
 
-    const pageLabel = (section.page_start && section.page_end)
-      ? `pp. ${section.page_start}–${section.page_end}`
+    const pageLabel = (section.page_start != null && section.page_end != null)
+      ? (section.page_start === section.page_end
+          ? `p. ${section.page_start}`
+          : `pp. ${section.page_start}–${section.page_end}`)
       : `p.${section.pdf_page}`;
 
     return `
