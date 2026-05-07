@@ -498,11 +498,13 @@ body.sidebar-open .sidebar-overlay {
 }
 
 /* Lists */
-.sec-body ul,
-.sec-body ol {
+ul, ol {
   padding-left: 1.5em;
   margin: 0.8em 0;
 }
+
+ul > li { list-style-type: disc; }
+ol > li { list-style-type: decimal; }
 
 .sec-body li { margin-bottom: 0.4em; }
 
@@ -609,23 +611,4 @@ footer {
   margin-top: 40px;
 }
 
-/* ============================================================
-   Ordered List Numbering
-   ============================================================ */
-ol {
-  counter-reset: list-counter;
-  list-style: none;
-  padding-left: 1.5em;
-}
 
-ol > li {
-  counter-increment: list-counter;
-  position: relative;
-}
-
-ol > li::before {
-  content: counter(list-counter) ". ";
-  position: absolute;
-  left: -1.5em;
-  font-weight: 600;
-}
