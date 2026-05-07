@@ -23,6 +23,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   applyLang();
   renderSidebar();
   navigate(1, '1.1');
+
+  // Wire up control buttons
+  document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+  document.getElementById('lang-toggle')?.addEventListener('click', toggleLanguage);
 });
 
 /* ------------------------------------------------------------
@@ -102,7 +106,8 @@ function renderSidebar() {
 
     const chHeading = document.createElement('div');
     chHeading.className = 'chapter-heading';
-    chHeading.textContent = `第${chapter.number}章 ${chTitle}`;
+    const chapterPrefix = currentLang === 'zh' ? `第${chapter.number}章` : `Chapter ${chapter.number}`;
+    chHeading.textContent = `${chapterPrefix} ${chTitle}`;
     chHeading.addEventListener('click', () => toggleChapter(chapter.number));
 
     const chSections = document.createElement('div');
