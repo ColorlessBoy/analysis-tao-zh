@@ -263,7 +263,7 @@ function renderSection() {
       </div>
     </header>
     <div class="sec-body">
-      ${body ? renderBody(body) : `<p class="empty-content">${emptyMsg}</p>`}
+      ${body ? mergeConsecutiveLists(renderBody(body)) : `<p class="empty-content">${emptyMsg}</p>`}
     </div>
   `;
 
@@ -380,6 +380,15 @@ function renderParagraphs(text) {
 
     return `<p>${inlineFormat(trimmed)}</p>`;
   });
+}
+
+/**
+ * Merge consecutive <ol> elements into one continuous numbered list.
+ * This handles the case where markdown conversion produces separate <ol> tags
+ * for what should be a single continuous list.
+ */
+function mergeConsecutiveLists(html) {
+  return html.replace(/<\/ol>\s*<ol>/g, '');
 }
 
 /**
