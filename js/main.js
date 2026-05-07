@@ -226,6 +226,12 @@ function renderSection() {
   const langLabel  = currentLang === 'zh' ? '中文' : 'EN';
   const emptyMsg   = currentLang === 'zh' ? '内容待填充…' : 'Content coming soon…';
 
+  // Clear any previous MathJax state BEFORE replacing content
+  // (prevents orphan MathItem references that cause rendering conflicts)
+  if (window.MathJax) {
+    MathJax.typesetClear([content]);
+  }
+
   content.innerHTML = `
     <header class="sec-header">
       <div class="sec-chapter-label">第${chapter.number}章 ${chTitle}</div>
@@ -247,12 +253,12 @@ function renderSection() {
   `;
 
   // Typeset math after DOM insertion — wait for MathJax to be fully initialized
+  // Use MathJax.startup.promise to ensure MathJax is loaded (async script pattern)
+  // If MathJax isn't loaded yet, the promise check handles it gracefully
   if (window.MathJax && MathJax.typesetPromise) {
-    MathJax.startup.promise.then(() => {
-      return MathJax.typesetPromise([content]);
-    }).catch(err =>
-      console.warn('[main] MathJax typeset error:', err)
-    );
+    MathJax.startup.promise
+      .then(() => MathJax.typesetPromise([content]))
+      .catch(err => console.warn('[main] MathJax typeset error:', err));
   }
 }
 
