@@ -33,9 +33,12 @@ window.TOC = {
       chHeading.textContent = `${prefix} ${chTitle}`;
       chHeading.addEventListener('click', () => {
         if (this.openChapters.has(chapter.number)) {
+          // Already open — navigate to chapter landing
           this.openChapters.delete(chapter.number);
           this._updateClasses();
+          window.App._renderChapter(chapter.number);
         } else {
+          // Closed — open it first, then navigate
           this.openChapters.add(chapter.number);
           this._updateClasses();
           window.App._renderChapter(chapter.number);

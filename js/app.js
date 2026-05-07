@@ -203,6 +203,12 @@ window.App = {
     const html = window.Renderer.renderChapter(chapter, this.currentLang);
     contentEl.innerHTML = html;
 
+    // Re-render sidebar TOC so the chapter accordion state reflects currentChapter
+    window.TOC.render(this.sectionsData.chapters, {
+      currentChapter: chapterNum,
+      currentSection: null,
+      lang: this.currentLang,
+    });
 
     // Update reading progress
     const progressEl = document.getElementById('progress-text');
