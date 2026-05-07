@@ -59,6 +59,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
@@ -530,5 +531,18 @@ body.sidebar-open .sidebar-overlay {
   .sidebar {
     width: min(var(--sidebar-w), 85vw);
     min-width: min(var(--sidebar-w), 85vw);
+  }
+
+  /* Long formulas scroll horizontally within their own container;
+     body/page must not scroll horizontally */
+  .sec-body {
+    overflow-x: hidden;
+  }
+  .sec-body .MathJax,
+  .sec-body mjx-container[jax="CHTML"],
+  .sec-body mjx-container[jax="SVG"] {
+    overflow-x: auto !important;
+    max-width: max-content !important;
+    display: inline-block !important;
   }
 }
