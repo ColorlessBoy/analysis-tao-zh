@@ -23,7 +23,19 @@ document.addEventListener('DOMContentLoaded', async () => {
   applyTheme();
   applyLang();
   renderSidebar();
-  navigate(1, '1.1');
+
+  // Restore section from URL hash (e.g. #1.2 → chapter 1, section 1.2)
+  const hash = window.location.hash.slice(1); // drop leading '#'
+  let initChapter = 1;
+  let initSection = '1.1';
+  if (hash) {
+    const match = hash.match(/^(\d+)\.(\S+)$/);
+    if (match) {
+      initChapter = parseInt(match[1], 10);
+      initSection = match[2];
+    }
+  }
+  navigate(initChapter, initSection);
 
   // Wire up control buttons
   document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
@@ -162,6 +174,9 @@ function navigate(chapterNum, sectionNum) {
 
   // Always open the chapter we're navigating to
   openChapters.add(chapterNum);
+
+  // Persist current section in URL hash (e.g. #1.2)
+  window.location.hash = `#${chapterNum}.${sectionNum}`;
 
   renderSidebar();
   renderSection();
@@ -303,10 +318,11 @@ function inlineFormat(text) {
   // Italic _..._
   s = s.replace(/_([^_]+)_/g, '<em>$1</em>');
 
-  // Math display $$...$$
-  s = s.replace(/\$\$([^$]+)\$\$/g, '<div class="math-display">$$$1$$</div>');
+  // Math display $$...$$ (use [\s\S] to handle newlines inside delimiters)
+  s = s.replace(/\$\$([\s\S]*?)\$\$/g, '<div class="math-display">$$$1$$</div>');
 
-  // Math inline $...$
+
+  // Math inline $...$ (use [\s\S] to handle newlines)
   s = s.replace(/\$([^$\n]+)\$/g, '$$$1$');
 
   return s;
