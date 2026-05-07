@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   renderSidebar();
 
   // Restore section from URL hash (e.g. #1.2 → chapter 1, section 1.2)
+  // Wait for loadData() to complete before navigating, so sectionsData is available
   const hash = window.location.hash.slice(1); // drop leading '#'
   let initChapter = 1;
   let initSection = '1.1';
