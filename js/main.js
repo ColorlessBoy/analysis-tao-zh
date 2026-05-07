@@ -227,10 +227,9 @@ function renderSection() {
   const emptyMsg   = currentLang === 'zh' ? '内容待填充…' : 'Content coming soon…';
 
   // Clear any previous MathJax state BEFORE replacing content
+  // Note: typesetClear() is a v4 feature; in v3 we simply skip this step
   // (prevents orphan MathItem references that cause rendering conflicts)
-  if (window.MathJax) {
-    MathJax.typesetClear([content]);
-  }
+  // We only check that MathJax is loaded.
 
   content.innerHTML = `
     <header class="sec-header">
@@ -253,8 +252,8 @@ function renderSection() {
   `;
 
   // Typeset math after DOM insertion — wait for MathJax to be fully initialized
-  // Use MathJax.startup.promise to ensure MathJax is loaded (async script pattern)
-  // If MathJax isn't loaded yet, the promise check handles it gracefully
+  // Chain through MathJax.startup.promise to ensure MathJax itself is ready
+  // before calling typesetPromise; this handles the async script loading correctly
   if (window.MathJax && MathJax.typesetPromise) {
     MathJax.startup.promise
       .then(() => MathJax.typesetPromise([content]))
