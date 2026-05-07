@@ -534,15 +534,19 @@ body.sidebar-open .sidebar-overlay {
   }
 
   /* Long formulas scroll horizontally within their own container;
-     body/page must not scroll horizontally */
-  .sec-body {
-    overflow-x: hidden;
-  }
-  .sec-body .MathJax,
-  .sec-body mjx-container[jax="CHTML"],
-  .sec-body mjx-container[jax="SVG"] {
+     body/page must not scroll horizontally.
+     MathJax inline math (jax=CHTML/SVG, display=false) */
+  .sec-body mjx-container[jax="CHTML"][display="false"],
+  .sec-body mjx-container[jax="SVG"][display="false"] {
     overflow-x: auto !important;
-    max-width: max-content !important;
-    display: inline-block !important;
+    max-width: 100% !important;
+  }
+
+  /* MathJax display math ($$...$$), display=true */
+  .sec-body mjx-container[jax="CHTML"][display="true"],
+  .sec-body mjx-container[jax="SVG"][display="true"] {
+    overflow-x: auto !important;
+    display: block !important;
+    max-width: 100% !important;
   }
 }
