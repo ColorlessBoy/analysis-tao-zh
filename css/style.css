@@ -1,5 +1,11 @@
 /* ── MathJax vertical alignment ── */
 mjx-container {
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+/* Inline math specific */
+mjx-container[display="false"] {
   vertical-align: middle !important;
 }
 
