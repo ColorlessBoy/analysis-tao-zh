@@ -30,13 +30,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   let initChapter = 1;
   let initSection = '1.1';
   if (hash) {
-    const match = hash.match(/^(\d+)\.(\S+)$/);
-    if (match) {
-      initChapter = parseInt(match[1], 10);
-      initSection = match[2];
+    // Pattern: chapter.section (e.g. "1.2") or chapter.section.subsection (e.g. "1.1.1")
+    const dotIdx = hash.indexOf('.');
+    if (dotIdx > 0) {
+      initChapter = parseInt(hash.slice(0, dotIdx), 10);
+      initSection = hash.slice(dotIdx + 1);  // e.g. "1.2" or "1.1.1"
     }
   }
-  console.log('[main] DOMContentLoaded: hash=', hash, 'initChapter=', initChapter, 'initSection=', initSection);
+
   navigate(initChapter, initSection);
 
   // Wire up control buttons
@@ -172,7 +173,7 @@ function toggleChapter(chapterNum) {
  * Navigation
  * ------------------------------------------------------------ */
 function navigate(chapterNum, sectionNum) {
-  console.log('[main] navigate called: chapterNum=', chapterNum, 'sectionNum=', sectionNum);
+
   currentSection = { chapter: chapterNum, section: sectionNum };
 
   // Always open the chapter we're navigating to
