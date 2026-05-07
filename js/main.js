@@ -297,19 +297,19 @@ function renderBody(text) {
   if (!text) return '';
 
   // Step 1: Protect display math ($$...$$) with placeholders
-  // Use \n in the match to avoid matching across unrelated content
+  // Use Unicode box characters (⧫) in placeholder names so they are NOT
+  // corrupted by inlineFormat's underscore→<em> processing
   const displayMathBlocks = [];
   let processed = text.replace(/\$\$[\s\S]*?\$\$/g, (match) => {
     displayMathBlocks.push(match);
-    return `__DISPLAY_MATH_${displayMathBlocks.length - 1}__`;
+    return `⧫DM${displayMathBlocks.length - 1}⧫`;
   });
 
   // Step 2: Protect inline math ($...$) with placeholders
-  // Only match single-line, single $ per side (no nested $, no newlines)
   const inlineMathBlocks = [];
   processed = processed.replace(/\$[^\$\n]+\$/g, (match) => {
     inlineMathBlocks.push(match);
-    return `__INLINE_MATH_${inlineMathBlocks.length - 1}__`;
+    return `⧫IM${inlineMathBlocks.length - 1}⧫`;
   });
 
   const boxPatterns = [
@@ -376,10 +376,10 @@ function renderBody(text) {
 
   // Step 3: Restore math blocks
   displayMathBlocks.forEach((block, idx) => {
-    html = html.replace(`__DISPLAY_MATH_${idx}__`, block);
+    html = html.replace(`⧫DM${idx}⧫`, block);
   });
   inlineMathBlocks.forEach((block, idx) => {
-    html = html.replace(`__INLINE_MATH_${idx}__`, block);
+    html = html.replace(`⧫IM${idx}⧫`, block);
   });
 
   return html;
