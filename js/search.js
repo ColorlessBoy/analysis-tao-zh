@@ -32,6 +32,12 @@ window.Search = {
     input.value = '';
     input.focus();
     this.renderResults('');
+
+    // Click outside search-box to close
+    this._overlayClickHandler = (e) => {
+      if (e.target === overlay) this.close();
+    };
+    overlay.addEventListener('click', this._overlayClickHandler);
   },
 
   /** Close search overlay */
@@ -40,6 +46,10 @@ window.Search = {
     if (!overlay) return;
     overlay.classList.remove('is-open');
     this.isOpen = false;
+    if (this._overlayClickHandler) {
+      overlay.removeEventListener('click', this._overlayClickHandler);
+      this._overlayClickHandler = null;
+    }
   },
 
   /** Run search and render results */

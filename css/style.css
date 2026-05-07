@@ -621,11 +621,48 @@ footer {
   .header-inner { padding: 0 12px 0 8px; gap: 8px; }
   .site-title { font-size: 0.82rem; }
   .sec-title { font-size: 1.5rem; }
-  .ctrl-btn { padding: 6px 8px; min-width: 40px; }
-  .ctrl-btn .lang-label { display: none; }
+
+  /* Ensure all ctrl buttons visible and touch-friendly on mobile */
+  .ctrl-btn {
+    display: inline-flex !important;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 6px 8px;
+  }
+
+  /* Hide label text on language toggle on very small screens */
+  @media (max-width: 420px) {
+    #lang-toggle .lang-label { display: none; }
+    .ctrl-btn { min-width: 36px; min-height: 36px; padding: 6px; }
+    .header-inner { gap: 4px; }
+  }
+
   .main-content { padding: 20px 16px 48px; }
   .sidebar { width: min(var(--sidebar-w), 85vw); min-width: min(var(--sidebar-w), 85vw); }
   .search-overlay { padding-top: 40px; }
+
+  /* ── Fix content overflow on mobile ── */
+  .sec-body {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  /* Images should be max-width:100% to avoid overflow */
+  .sec-body img { max-width: 100%; height: auto; display: block; }
+
+  /* Long code lines should scroll */
+  .sec-body pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  /* Tables should scroll horizontally */
+  .sec-body table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 
   /* MathJax horizontal scroll on mobile */
   .sec-body mjx-container[jax="CHTML"][display="false"],
@@ -639,6 +676,12 @@ footer {
     display: block !important;
     max-width: 100% !important;
   }
+}
+
+/* Ensure search-box doesn't overflow on small screens */
+@media (max-width: 480px) {
+  .search-box { width: 95vw; }
+  .search-result-item { padding: 10px 14px; }
 }
 
 /* ============================================================

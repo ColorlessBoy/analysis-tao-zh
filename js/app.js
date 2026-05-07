@@ -198,6 +198,7 @@ window.App = {
     document.body.classList.toggle('sidebar-open', this.sidebarOpen);
     const btn = document.getElementById('hamburger');
     if (btn) btn.setAttribute('aria-label', this.sidebarOpen ? '关闭导航' : '打开导航');
+    if (this.sidebarOpen && window.Search.isOpen) window.Search.close();
   },
 
   _closeSidebar() {
@@ -232,6 +233,7 @@ window.App = {
     document.getElementById('lang-toggle')?.addEventListener('click', () => this.toggleLanguage());
     document.getElementById('hamburger')?.addEventListener('click', () => this.toggleSidebar());
     document.getElementById('sidebar-overlay')?.addEventListener('click', () => this._closeSidebar());
+    document.getElementById('search-close-btn')?.addEventListener('click', () => window.Search.close());
     document.getElementById('search-btn')?.addEventListener('click', () => window.Search.open());
     document.getElementById('bookmark-btn')?.addEventListener('click', () => this.toggleBookmark());
 
