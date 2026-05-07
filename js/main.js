@@ -18,7 +18,12 @@ let sidebarOpen    = false;  // mobile sidebar state
 /* ------------------------------------------------------------
  * Init
  * ------------------------------------------------------------ */
+let _initialized = false;
 document.addEventListener('DOMContentLoaded', async () => {
+  // Guard against double initialization (can happen with some browser behaviors)
+  if (_initialized) return;
+  _initialized = true;
+
   await loadData();
   applyTheme();
   applyLang();
@@ -37,6 +42,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       initSection = hash.slice(dotIdx + 1);  // e.g. "1.2" or "1.1.1"
     }
   }
+  console.log('[main] DOMContentLoaded: hash=', hash, 'initChapter=', initChapter, 'initSection=', initSection);
 
   navigate(initChapter, initSection);
 
