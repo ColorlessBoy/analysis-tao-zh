@@ -400,12 +400,10 @@ function inlineFormat(text) {
   // Italic _..._
   s = s.replace(/_([^_]+)_/g, '<em>$1</em>');
 
-  // Math display $$...$$ — keep delimiters so MathJax processes them directly
-  // No HTML wrapper; MathJax scans the text node for $$...$$
-  s = s.replace(/\$\$([\s\S]*?)\$\$/g, '$$$$1$$');
-
-  // Math inline $...$ — keep delimiters so MathJax processes them directly
-  s = s.replace(/\$([^$\n]+)\$/g, '$$1$');
+  // DO NOT touch math delimiters — MathJax v3 scans text nodes directly
+  // for $$...$$ (display) and $...$ (inline). Wrapping or replacing math
+  // corrupts display formulas because the inline regex greedily eats content
+  // inside display math blocks. Just leave the raw LaTeX delimiters in place.
 
   return s;
 }
