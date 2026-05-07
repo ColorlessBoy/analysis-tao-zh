@@ -35,15 +35,18 @@ document.addEventListener('DOMContentLoaded', async () => {
   let initChapter = 1;
   let initSection = '1.1';
   if (hash) {
-    // Pattern: chapter.section (e.g. "1.2") or chapter.section.subsection (e.g. "1.1.1")
-    const dotIdx = hash.indexOf('.');
-    if (dotIdx > 0) {
-      initChapter = parseInt(hash.slice(0, dotIdx), 10);
-      initSection = hash.slice(dotIdx + 1);  // e.g. "1.2" or "1.1.1"
+    // Parse hash: format is "chapter.section" (e.g. "1.2") or "chapter.section.subsection" (e.g. "1.1.1")
+    // initSection should be the FULL section identifier (e.g. "1.2" or "1.1.1")
+    // We determine chapter from the first number before the first dot, and the rest is the section
+    const firstDot = hash.indexOf('.');
+    if (firstDot > 0) {
+      const chapterStr = hash.slice(0, firstDot);       // e.g. "1"
+      const sectionStr = hash.slice(firstDot + 1);     // e.g. "2" for "1.2" or "1.1" for "1.1.1"
+      initChapter = parseInt(chapterStr, 10);
+      // section identifier is chapter.sectionStr (e.g. "1.2" or "1.1.1")
+      initSection = chapterStr + '.' + sectionStr;
     }
   }
-  console.log('[main] DOMContentLoaded: hash=', hash, 'initChapter=', initChapter, 'initSection=', initSection);
-
   navigate(initChapter, initSection);
 
   // Wire up control buttons
@@ -179,8 +182,6 @@ function toggleChapter(chapterNum) {
  * Navigation
  * ------------------------------------------------------------ */
 function navigate(chapterNum, sectionNum) {
-  console.log('[main] navigate called: chapterNum=', chapterNum, 'sectionNum=', sectionNum);
-
   currentSection = { chapter: chapterNum, section: sectionNum };
 
   // Always open the chapter we're navigating to
