@@ -377,11 +377,12 @@ function inlineFormat(text) {
   // Italic _..._
   s = s.replace(/_([^_]+)_/g, '<em>$1</em>');
 
-  // Math display $$...$$ — strip delimiters so MathJax can render
-  s = s.replace(/\$\$([\s\S]*?)\$\$/g, (_, formula) => `<div class="math-display">${formula}</div>`);
+  // Math display $$...$$ — keep delimiters so MathJax processes them directly
+  // No HTML wrapper; MathJax scans the text node for $$...$$
+  s = s.replace(/\$\$([\s\S]*?)\$\$/g, '$$$$1$$');
 
-  // Math inline $...$ — strip delimiters so MathJax can render
-  s = s.replace(/\$([^$\n]+)\$/g, (_, formula) => `<span class="math-inline">${formula}</span>`);
+  // Math inline $...$ — keep delimiters so MathJax processes them directly
+  s = s.replace(/\$([^$\n]+)\$/g, '$$1$');
 
   return s;
 }
