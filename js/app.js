@@ -36,7 +36,11 @@ window.App = {
     const hash = window.location.hash.slice(1);
     if (hash) {
       const dot = hash.indexOf('.');
-      if (dot > 0) {
+      const chMatch = hash.match(/^ch(\d+)$/i);
+      if (chMatch) {
+        initChapter = parseInt(chMatch[1], 10);
+        initSection = null;
+      } else if (dot > 0) {
         initChapter = parseInt(hash.slice(0, dot), 10);
         initSection = hash;
       }
@@ -45,7 +49,11 @@ window.App = {
       initSection = saved.section;
     }
 
-    this.navigate(initChapter, initSection, /* skipScroll */ true);
+    if (initSection) {
+      this.navigate(initChapter, initSection, /* skipScroll */ true);
+    } else {
+      this._renderChapter(initChapter);
+    }
 
     this._wireEvents();
 
@@ -101,7 +109,8 @@ window.App = {
     window.TOC.openChapters.add(chapterNum);
 
     // Update URL hash
-    window.location.hash = `#${sectionId}`;
+    const dot = sectionId.indexOf('.');
+    window.location.hash = dot > 0 ? `#${sectionId}` : `#ch${chapterNum}`;
 
     // Render
     this._renderSection();
@@ -134,15 +143,14 @@ window.App = {
     const section = chapter.sections.find(s => s.number === this.currentSection.section);
     if (!section) return;
 
+
     const body = this.currentLang === 'zh' ? section.content_zh : section.content_en;
 
     // Clear previous MathJax state
     window.MathHelper.clear(contentEl);
-
     // Render HTML
     const html = window.Renderer.render(body, section, chapter, this.currentLang);
     contentEl.innerHTML = html;
-
     // Render breadcrumb
     const breadcrumbEl = document.getElementById('breadcrumb');
     if (breadcrumbEl) {
@@ -154,7 +162,6 @@ window.App = {
         this.currentLang
       );
     }
-
     // Render reading progress
     const progressEl = document.getElementById('progress-text');
     if (progressEl) {
@@ -168,9 +175,50 @@ window.App = {
         this.currentLang
       );
     }
-
     // Request MathJax typeset
     window.MathHelper.requestTypeset(contentEl);
+  },
+
+  _renderChapter(chapterNum) {
+    const contentEl = document.getElementById('section-content');
+    if (!contentEl || !this.sectionsData) return;
+
+    const chapter = this.sectionsData.chapters.find(c => c.number === chapterNum);
+    if (!chapter) return;
+
+    this.currentSection = { chapter: chapterNum, section: null };
+    window.location.hash = `#ch${chapterNum}`;
+
+    // Render breadcrumb (chapter only)
+    const breadcrumbEl = document.getElementById('breadcrumb');
+    if (breadcrumbEl) {
+      const chLabel = this.currentLang === 'zh' ? `第${chapter.number}章` : `Chapter ${chapter.number}`;
+      breadcrumbEl.innerHTML = `<span>${chLabel}</span><span class="sep">›</span><span>${this.currentLang === 'zh' ? chapter.title_zh : chapter.title_en}</span>`;
+    }
+
+    // Clear previous MathJax state
+    window.MathHelper.clear(contentEl);
+
+    // Render chapter landing HTML
+    const html = window.Renderer.renderChapter(chapter, this.currentLang);
+    contentEl.innerHTML = html;
+
+
+    // Update reading progress
+    const progressEl = document.getElementById('progress-text');
+    if (progressEl) {
+      const totalPages = this.sectionsData.metadata?.total_pages || 312;
+      progressEl.textContent = window.Renderer.progressText(
+        chapter.number,
+        '',
+        this.currentLang === 'zh' ? chapter.title_zh : chapter.title_en,
+        '',
+        totalPages,
+        this.currentLang
+      );
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   },
 
   _typesetContent() {
@@ -269,6 +317,15 @@ window.App = {
     window.addEventListener('hashchange', () => {
       const hash = window.location.hash.slice(1);
       if (!hash) return;
+      // Chapter landing: #ch2, #ch3, etc.
+      const chMatch = hash.match(/^ch(\d+)$/i);
+      if (chMatch) {
+        const ch = parseInt(chMatch[1], 10);
+        if (ch !== this.currentSection.chapter) {
+          this._renderChapter(ch);
+        }
+        return;
+      }
       const dot = hash.indexOf('.');
       if (dot > 0) {
         const ch = parseInt(hash.slice(0, dot), 10);

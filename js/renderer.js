@@ -240,6 +240,49 @@ window.Renderer = {
    */
   progressText(chapterNum, sectionNum, sectionTitle, pdfPage, totalPages, lang) {
     const chLabel = lang === 'zh' ? `第${chapterNum}章` : `Ch ${chapterNum}`;
-    return `${chLabel} · ${sectionNum} · p.${pdfPage} / ${totalPages}`;
+    const secLabel = sectionNum ? ` · ${sectionNum}` : '';
+    const pageLabel = pdfPage ? ` · p.${pdfPage}` : '';
+    return `${chLabel}${secLabel}${pageLabel} / ${totalPages}`;
+  },
+
+  /**
+   * Render chapter landing page.
+   * @param {Object} chapter - chapter metadata
+   * @param {string} lang - 'zh' or 'en'
+   */
+  renderChapter(chapter, lang) {
+    const langLabel = lang === 'zh' ? '中文' : 'EN';
+    const chTitle = lang === 'zh' ? chapter.title_zh : chapter.title_en;
+    const contentKey = lang === 'zh' ? 'content_zh' : 'content_en';
+    const body = chapter[contentKey];
+
+    const processedBody = body ? this.renderBody(body) : '';
+    const mergedBody = this.mergeConsecutiveLists(processedBody);
+
+    // List sections in this chapter
+    const sectionLinks = chapter.sections.map(s => {
+      const secTitle = lang === 'zh' ? s.title_zh : s.title_en;
+      return `<li><a href="#${s.number}" class="chapter-sec-link">${s.number} ${secTitle}</a></li>`;
+    }).join('');
+
+    return `
+      <header class="sec-header">
+        <div class="sec-chapter-label">${lang === 'zh' ? `第${chapter.number}章` : `Chapter ${chapter.number}`}</div>
+        <h1 class="sec-title">${chTitle}</h1>
+        <div class="sec-meta">
+          <span class="badge badge-lang">${langLabel}</span>
+        </div>
+      </header>
+      <div class="sec-body">
+        ${mergedBody || ''}
+        <div class="chapter-sec-list">
+          <h3>${lang === 'zh' ? '本章节目录' : 'Chapter Sections'}</h3>
+          <ul>${sectionLinks}</ul>
+        </div>
+      </div>
+      <footer class="sec-footer">
+        <a href="https://github.com/ColorlessBoy/analysis-tao-zh/edit/main/data/sections.json" target="_blank" rel="noopener" class="edit-link">编辑此章节</a>
+      </footer>
+    `;
   }
 };

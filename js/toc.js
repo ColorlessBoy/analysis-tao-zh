@@ -31,7 +31,10 @@ window.TOC = {
       chHeading.className = 'chapter-heading';
       const prefix = state.lang === 'zh' ? `第${chapter.number}章` : `Chapter ${chapter.number}`;
       chHeading.textContent = `${prefix} ${chTitle}`;
-      chHeading.addEventListener('click', () => this.toggleChapter(chapter.number));
+      chHeading.addEventListener('click', () => {
+        // Clicking chapter heading navigates to chapter landing
+        window.App._renderChapter(chapter.number);
+      });
 
       const chSections = document.createElement('div');
       chSections.className = 'chapter-sections';

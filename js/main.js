@@ -63,6 +63,34 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('hamburger')?.addEventListener('click', toggleSidebar);
   document.getElementById('sidebar-overlay')?.addEventListener('click', closeSidebar);
 
+  // Keep URL hash and current section in sync after init
+  window.addEventListener('hashchange', () => {
+    const hash = window.location.hash.slice(1); // drop leading '#'
+    let targetChapter = currentSection.chapter;
+    let targetSection = currentSection.section;
+    if (hash.startsWith('ch')) {
+      targetChapter = parseInt(hash.slice(2), 10) || 1;
+      targetSection = '__chapter__';
+    } else if (hash) {
+      const firstDot = hash.indexOf('.');
+      if (firstDot > 0) {
+        targetChapter = parseInt(hash.slice(0, firstDot), 10);
+        targetSection = hash; // already "chapter.section"
+      } else {
+        targetChapter = parseInt(hash, 10) || 1;
+        targetSection = '__chapter__';
+      }
+    }
+    if (targetChapter !== currentSection.chapter || targetSection !== currentSection.section) {
+      currentSection = { chapter: targetChapter, section: targetSection };
+      openChapters.add(targetChapter);
+      renderSidebar();
+      renderSection();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      closeSidebar();
+    }
+  });
+
   // Set creation timestamp
   document.getElementById('created-time').textContent = new Date().toLocaleString('zh-CN', {timeZone: 'Asia/Shanghai'});
 });
