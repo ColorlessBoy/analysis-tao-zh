@@ -54,6 +54,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('lang-toggle')?.addEventListener('click', toggleLanguage);
   document.getElementById('hamburger')?.addEventListener('click', toggleSidebar);
   document.getElementById('sidebar-overlay')?.addEventListener('click', closeSidebar);
+
+  // Set creation timestamp
+  document.getElementById('created-time').textContent = new Date().toLocaleString('zh-CN', {timeZone: 'Asia/Shanghai'});
 });
 
 /* ------------------------------------------------------------
@@ -224,7 +227,8 @@ function closeSidebar() {
  * ------------------------------------------------------------ */
 function renderSection() {
   const content = document.getElementById('content');
-  if (!content || !sectionsData) return;
+  console.log('[main] renderSection called: sectionsData=', sectionsData !== null, 'currentSection=', JSON.stringify(currentSection));
+  if (!content || !sectionsData) { console.log('[main] renderSection early return'); return; }
 
   const chapter = sectionsData.chapters.find(c => c.number === currentSection.chapter);
   if (!chapter) return;

@@ -598,3 +598,13 @@ body.sidebar-open .sidebar-overlay {
 .math-inline {
   /* inline math needs no special layout */
 }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
