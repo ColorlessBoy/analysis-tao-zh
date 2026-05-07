@@ -288,9 +288,29 @@ function renderSection() {
  *   - italic _text_
  *   - math $...$ and $$...$$
  *   - Definition / Axiom / Theorem / Proposition / Lemma / Corollary / Remark / Exercise / Example → styled boxes
+ *
+ * IMPORTANT: Math blocks are protected BEFORE any text splitting/processing to prevent:
+ *   - Paragraph splitting from breaking multi-line display math ($$...$$)
+ *   - Italic regex (_..._) from matching underscores inside math expressions
  */
 function renderBody(text) {
   if (!text) return '';
+
+  // Step 1: Protect display math ($$...$$) with placeholders
+  // Use \n in the match to avoid matching across unrelated content
+  const displayMathBlocks = [];
+  let processed = text.replace(/\$\$[\s\S]*?\$\$/g, (match) => {
+    displayMathBlocks.push(match);
+    return `__DISPLAY_MATH_${displayMathBlocks.length - 1}__`;
+  });
+
+  // Step 2: Protect inline math ($...$) with placeholders
+  // Only match single-line, single $ per side (no nested $, no newlines)
+  const inlineMathBlocks = [];
+  processed = processed.replace(/\$[^\$\n]+\$/g, (match) => {
+    inlineMathBlocks.push(match);
+    return `__INLINE_MATH_${inlineMathBlocks.length - 1}__`;
+  });
 
   const boxPatterns = [
     { label: 'Definition',  cls: 'definition', zh: '定义' },
@@ -304,7 +324,7 @@ function renderBody(text) {
     { label: 'Example',    cls: 'example',     zh: '例' },
   ];
 
-  const lines = text.split('\n');
+  const lines = processed.split('\n');
   const result = [];
   let i = 0;
 
@@ -352,7 +372,17 @@ function renderBody(text) {
     }
   }
 
-  return result.join('\n');
+  let html = result.join('\n');
+
+  // Step 3: Restore math blocks
+  displayMathBlocks.forEach((block, idx) => {
+    html = html.replace(`__DISPLAY_MATH_${idx}__`, block);
+  });
+  inlineMathBlocks.forEach((block, idx) => {
+    html = html.replace(`__INLINE_MATH_${idx}__`, block);
+  });
+
+  return html;
 }
 
 /**
