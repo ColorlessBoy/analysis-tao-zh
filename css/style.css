@@ -134,6 +134,7 @@ body.lang-zh  .en-only { display: none; }
   align-items: center;
   gap: 6px;
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 /* ── Hamburger ── */
@@ -166,6 +167,22 @@ body.lang-zh  .en-only { display: none; }
   transition: opacity 0.25s ease;
 }
 body.sidebar-open .sidebar-overlay { display: block; opacity: 1; }
+
+/* ── Language label (ensure visible on all breakpoints) ── */
+.lang-label {
+  font-size: 0.75rem;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  white-space: nowrap;
+  display: inline !important;
+}
+
+/* ── Site title language-aware display ── */
+.title-lang { display: none; }
+.zh-only { display: none; }
+.en-only { display: none; }
+body.lang-zh .zh-only { display: inline; }
+body.lang-en .en-only { display: inline; }
 
 /* ── Control buttons ── */
 .ctrl-btn {
@@ -622,6 +639,7 @@ footer {
 
 @media (max-width: 600px) {
   .header-inner { padding: 0 12px 0 8px; gap: 8px; }
+  .header-controls { margin-left: auto; }
   .site-title { font-size: 0.82rem; }
   .sec-title { font-size: 1.5rem; }
 
@@ -633,12 +651,8 @@ footer {
     padding: 6px 8px;
   }
 
-  /* Hide label text on language toggle on very small screens */
-  @media (max-width: 420px) {
-    #lang-toggle .lang-label { display: none; }
-    .ctrl-btn { min-width: 36px; min-height: 36px; padding: 6px; }
-    .header-inner { gap: 4px; }
-  }
+  /* lang-label stays visible on all mobile breakpoints */
+  #lang-toggle .lang-label { display: inline !important; }
 
   .main-content { padding: 20px 16px 48px; }
   .sidebar { width: min(var(--sidebar-w), 85vw); min-width: min(var(--sidebar-w), 85vw); }
