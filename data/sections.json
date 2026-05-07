@@ -5,8 +5,22 @@
       "title_en": "Introduction",
       "title_zh": "引言",
       "sections": [
-        {"number": "1.1", "title_en": "What Is Analysis?", "title_zh": "什么是分析？", "pdf_page": 18, "content_en": "Chapter 1\nIntroduction\n\n1.1 What Is Analysis?\n\nThis text is an honors-level undergraduate introduction to real analysis: the analysis of the real numbers, sequences and series of real numbers, and real-valued functions. This is related to, but is distinct from, complex analysis, which concerns the analysis of the complex numbers and complex functions, harmonic analysis, which concerns the analysis of harmonics (waves) such as sine waves, and how they synthesize other functions via the Fourier transform, functional analysis, which focuses much more heavily on functions (and how they form things like vector spaces), and so forth. Analysis is the rigorous study of such objects, with a focus on trying to pin down precisely and accurately the qualitative and quantitative behavior of these objects. Real analysis is the theoretical foundation which underlies calculus, which is the collection of computational algorithms which one uses to manipulate functions.\n\nIn this text we will be studying many objects which will be familiar to you from freshman calculus: numbers, sequences, series, limits, functions, definite integrals, derivatives, and so forth. You already have a great deal of experience of computing with these objects; however here we will be focused more on the underlying theory for these objects. We will be concerned with questions such as the following:\n\n1. What is a real number? Is there a largest real number? After 0, what is the \"next\" real number (i.e., what is the smallest positive real number)? Can you cut a real number into pieces infinitely many times? Why does a number such as 2 have a square root, while a number such as −2 does not? If there are infinitely many reals and infinitely many rationals, how come there are \"more\" real numbers than rational numbers?\n\n2. How do you take the limit of a sequence of real numbers? Which sequences have limits and which ones don't? If you can stop a sequence from escaping to infinity, does this mean that it must eventually settle down and converge? Can you add infinitely many real numbers together and still get a finite real number? Can you add infinitely many rational numbers together and end up with a non-rational number? If you rearrange the elements of an infinite sum, is the sum still the same?\n\n3. What is a function? What does it mean for a function to be continuous? differentiable? integrable? bounded? Can you add infinitely many functions together? What about taking limits of sequences of functions? Can you differentiate an infinite series of functions? What about integrating? If a function f(x) takes the value 3 when x = 0 and 5 when x = 1 (i.e., f(0) = 3 and f(1) = 5), does it have to take every intermediate value between 3 and 5 when x goes between 0 and 1? Why?\n\nYou may already know how to answer some of these questions from your calculus classes, but most likely these sorts of issues were only of secondary importance to those courses; the emphasis was on getting you to perform computations, such as computing the integral of x sin(x²) from x = 0 to x = 1. But now that you are comfortable with these objects and already know how to do all the computations, we will go back to the theory and try to really understand what is going on.", "content_zh": "第一章\n引言\n\n1.1 什么是分析？\n\n本书是一本面向荣誉学位本科生的实分析入门教材：实分析是关于实数、实数序列、实数级数以及实值函数的分析。这与复分析（研究复数及复函数的分析）、调和分析（研究正弦波等谐波及其通过傅里叶变换合成其他函数的分析）以及泛函分析（更深入地研究函数本身及其如何构成线性空间等结构）等领域相关，但有所不同。分析是对这些对象的严格研究，致力于精确而准确地阐明这些对象的定性和定量行为。实分析是微积分的理论基础，而微积分则是人们用来操作函数的一套计算算法的集合。\n\n在本书中，我们将学习许多你在初等微积分中已经熟悉的对象：数、序列、级数、极限、函数、定积分、导数等等。你在计算这些对象方面已经积累了丰富的经验；然而，在本书中我们将更加关注这些对象背后的理论基础。我们将探讨以下这些问题：\n\n1. 什么是实数？是否存在最大的实数？在0之后，\"下一个\"实数是什么（即最小的正实数是多少）？你是否可以把一个实数无限多次地切成碎片？为什么像2这样的数有平方根，而像-2这样的数却没有？如果实数和有理数都有无穷多个，为什么实数比有理数\"更多\"？\n\n2. 如何求一个实数序列的极限？哪些序列有极限，哪些没有？如果你阻止一个序列趋向无穷，这是否意味着它必然会稳定下来并收敛？你能否把无穷多个实数加在一起仍得到一个有限的实数？你能否把无穷多个有理数加在一起而得到一个无理数？如果你重排一个无穷和的元素，和是否仍然相同？\n\n3. 什么是函数？函数连续是什么意思？可微是什么意思？可积是什么意思？有界是什么意思？你能否把无穷多个函数加在一起？取函数序列的极限又如何？你能否对一个无穷级数求微分？求积分呢？如果一个函数f(x)在x = 0时取值3，在x = 1时取值5（即f(0) = 3且f(1) = 5），那么当x取0到1之间的值时，它是否必然取到3和5之间的每一个中间值？为什么？\n\n你可能已经从微积分课程中知道如何回答其中一些问题，但这些议题在那些课程中很可能只是次要的关注点；那些课程的重点是让你进行计算，例如计算$\\int_0^1 x\\sin(x^2)\\,dx$。但既然你现在已经对这些对象驾轻就熟，并且已经知道如何完成所有计算，我们就要回到理论层面，真正理解其中发生了什么。"},
-        {"number": "1.2", "title_en": "Why Do Analysis?", "title_zh": "为什么要学分析？", "pdf_page": 18, "content_en": "", "content_zh": ""}
+        {
+          "number": "1.1",
+          "title_en": "What Is Analysis?",
+          "title_zh": "什么是分析？",
+          "pdf_page": 18,
+          "content_en": "Chapter 1\nIntroduction\n\n1.1 What Is Analysis?\n\nThis text is an honors-level undergraduate introduction to real analysis: the analysis of the real numbers, sequences and series of real numbers, and real-valued functions. This is related to, but is distinct from, complex analysis, which concerns the analysis of the complex numbers and complex functions, harmonic analysis, which concerns the analysis of harmonics (waves) such as sine waves, and how they synthesize other functions via the Fourier transform, functional analysis, which focuses much more heavily on functions (and how they form things like vector spaces), and so forth. Analysis is the rigorous study of such objects, with a focus on trying to pin down precisely and accurately the qualitative and quantitative behavior of these objects. Real analysis is the theoretical foundation which underlies calculus, which is the collection of computational algorithms which one uses to manipulate functions.\n\nIn this text we will be studying many objects which will be familiar to you from freshman calculus: numbers, sequences, series, limits, functions, definite integrals, derivatives, and so forth. You already have a great deal of experience of computing with these objects; however here we will be focused more on the underlying theory for these objects. We will be concerned with questions such as the following:\n\n1. What is a real number? Is there a largest real number? After 0, what is the \"next\" real number (i.e., what is the smallest positive real number)? Can you cut a real number into pieces infinitely many times? Why does a number such as 2 have a square root, while a number such as −2 does not? If there are infinitely many reals and infinitely many rationals, how come there are \"more\" real numbers than rational numbers?\n\n2. How do you take the limit of a sequence of real numbers? Which sequences have limits and which ones don't? If you can stop a sequence from escaping to infinity, does this mean that it must eventually settle down and converge? Can you add infinitely many real numbers together and still get a finite real number? Can you add infinitely many rational numbers together and end up with a non-rational number? If you rearrange the elements of an infinite sum, is the sum still the same?\n\n3. What is a function? What does it mean for a function to be continuous? differentiable? integrable? bounded? Can you add infinitely many functions together? What about taking limits of sequences of functions? Can you differentiate an infinite series of functions? What about integrating? If a function f(x) takes the value 3 when x = 0 and 5 when x = 1 (i.e., f(0) = 3 and f(1) = 5), does it have to take every intermediate value between 3 and 5 when x goes between 0 and 1? Why?\n\nYou may already know how to answer some of these questions from your calculus classes, but most likely these sorts of issues were only of secondary importance to those courses; the emphasis was on getting you to perform computations, such as computing the integral of x sin(x²) from x = 0 to x = 1. But now that you are comfortable with these objects and already know how to do all the computations, we will go back to the theory and try to really understand what is going on.",
+          "content_zh": "第一章\n引言\n\n1.1 什么是分析？\n\n本书是一本面向荣誉学位本科生的实分析入门教材：实分析是关于实数、实数序列、实数级数以及实值函数的分析。这与复分析（研究复数及复函数的分析）、调和分析（研究正弦波等谐波及其通过傅里叶变换合成其他函数的分析）以及泛函分析（更深入地研究函数本身及其如何构成线性空间等结构）等领域相关，但有所不同。分析是对这些对象的严格研究，致力于精确而准确地阐明这些对象的定性和定量行为。实分析是微积分的理论基础，而微积分则是人们用来操作函数的一套计算算法的集合。\n\n在本书中，我们将学习许多你在初等微积分中已经熟悉的对象：数、序列、级数、极限、函数、定积分、导数等等。你在计算这些对象方面已经积累了丰富的经验；然而，在本书中我们将更加关注这些对象背后的理论基础。我们将探讨以下这些问题：\n\n1. 什么是实数？是否存在最大的实数？在0之后，\"下一个\"实数是什么（即最小的正实数是多少）？你是否可以把一个实数无限多次地切成碎片？为什么像2这样的数有平方根，而像-2这样的数却没有？如果实数和有理数都有无穷多个，为什么实数比有理数\"更多\"？\n\n2. 如何求一个实数序列的极限？哪些序列有极限，哪些没有？如果你阻止一个序列趋向无穷，这是否意味着它必然会稳定下来并收敛？你能否把无穷多个实数加在一起仍得到一个有限的实数？你能否把无穷多个有理数加在一起而得到一个无理数？如果你重排一个无穷和的元素，和是否仍然相同？\n\n3. 什么是函数？函数连续是什么意思？可微是什么意思？可积是什么意思？有界是什么意思？你能否把无穷多个函数加在一起？取函数序列的极限又如何？你能否对一个无穷级数求微分？求积分呢？如果一个函数f(x)在x = 0时取值3，在x = 1时取值5（即f(0) = 3且f(1) = 5），那么当x取0到1之间的值时，它是否必然取到3和5之间的每一个中间值？为什么？\n\n你可能已经从微积分课程中知道如何回答其中一些问题，但这些议题在那些课程中很可能只是次要的关注点；那些课程的重点是让你进行计算，例如计算$\\int_0^1 x\\sin(x^2)\\,dx$。但既然你现在已经对这些对象驾轻就熟，并且已经知道如何完成所有计算，我们就要回到理论层面，真正理解其中发生了什么。"
+        },
+        {
+          "number": "1.2",
+          "title_en": "Why Do Analysis?",
+          "title_zh": "为什么要学分析？",
+          "pdf_page": 18,
+          "content_en": "1.2 Why Do Analysis?\n\nIt is a fair question to ask, \"why bother?\", when it comes to analysis. There is a certain philosophical satisfaction in knowing why things work, but a pragmatic person may argue that one only needs to know how things work to do real-life problems. The calculus training you receive in introductory classes is certainly adequate for you to begin solving many problems in physics, chemistry, biology, economics, computer science, finance, engineering, or whatever else you end up doing—and you can certainly use things like the chain rule, L'Hôpital's rule, or integration by parts without knowing why these rules work, or whether there are any exceptions to these rules. However, one can get into trouble if one applies rules without knowing where they came from and what the limits of their applicability are. Let me give some examples in which several of these familiar rules, if applied blindly without knowledge of the underlying analysis, can lead to disaster.\n\nExample 1.2.1 (Division by zero). This is a very familiar one to you: the cancellation law $ac = bc \\implies a = b$ does not work when $c = 0$. For instance, the identity $1 \\times 0 = 2 \\times 0$ is true, but if one blindly cancels the 0 then one obtains $1 = 2$, which is false. In this case it was obvious that one was dividing by zero; but in other cases it can be more hidden.\n\nExample 1.2.2 (Divergent series). You have probably seen geometric series such as the infinite sum\n\n$$S = 1 + \\frac{1}{2} + \\frac{1}{4} + \\frac{1}{8} + \\frac{1}{16} + \\cdots.$$\n\nYou have probably seen the following trick to sum this series: if we call the above sum $S$, then if we multiply both sides by 2, we obtain\n\n$$2S = 2 + 1 + \\frac{1}{2} + \\frac{1}{4} + \\frac{1}{8} + \\cdots = 2 + S$$\n\nand hence $S = 2$, so the series sums to 2. However, if you apply the same trick to the series\n\n$$S = 1 + 2 + 4 + 8 + 16 + \\cdots,$$\n\none gets nonsensical results:\n\n$$2S = 2 + 4 + 8 + 16 + \\cdots = S - 1 \\implies S = -1.$$\n\nSo the same reasoning that shows that $1 + \\frac{1}{2} + \\frac{1}{4} + \\cdots = 2$ also gives that $1 + 2 + 4 + 8 + \\cdots = -1$. Why is it that we trust the first equation but not the second? A similar example arises with the series\n\n$$S = 1 - 1 + 1 - 1 + 1 - 1 + \\cdots;$$\n\nwe can write\n\n$$S = 1 - (1 - 1 + 1 - 1 + \\cdots) = 1 - S$$\n\nand hence that $S = 1/2$; or instead we can write\n\n$$S = (1 - 1) + (1 - 1) + (1 - 1) + \\cdots = 0 + 0 + \\cdots$$\n\nand hence that $S = 0$; or instead we can write\n\n$$S = 1 + (-1 + 1) + (-1 + 1) + \\cdots = 1 + 0 + 0 + \\cdots$$\n\nand hence that $S = 1$. Which one is correct? (See Exercise 7.2.1 for an answer.)\n\nExample 1.2.3 (Divergent sequences). Here is a slight variation of the previous example. Let $x$ be a real number, and let $L$ be the limit\n\n$$L = \\lim_{n \\to \\infty} x^n.$$\n\nChanging variables $n = m + 1$, we have\n\n$$L = \\lim_{m+1 \\to \\infty} x^{m+1} = \\lim_{m+1 \\to \\infty} x \\times x^m = x \\lim_{m+1 \\to \\infty} x^m.$$\n\nBut if $m+1 \\to \\infty$, then $m \\to \\infty$, thus\n\n$$\\lim_{m+1 \\to \\infty} x^m = \\lim_{m \\to \\infty} x^m = \\lim_{n \\to \\infty} x^n = L,$$\n\nand thus\n\n$$xL = L.$$\n\nAt this point we could cancel the $L$'s and conclude that $x = 1$ for an arbitrary real number $x$, which is absurd. But since we are already aware of the division by zero problem, we could be a little smarter and conclude instead that either $x = 1$, or $L = 0$. In particular we seem to have shown that\n\n$$\\lim_{n \\to \\infty} x^n = 0 \\text{ for all } x \\neq 1.$$\n\nBut this conclusion is absurd if we apply it to certain values of $x$, for instance by specializing to the case $x = 2$ we could conclude that the sequence $1, 2, 4, 8, \\ldots$ converges to zero, and by specializing to the case $x = -1$ we conclude that the sequence $1, -1, 1, -1, \\ldots$ also converges to zero. These conclusions appear to be absurd; what is the problem with the above argument? (See Exercise 6.3.4 for an answer.)\n\nExample 1.2.4 (Limiting values of functions). Start with the expression $\\lim_{x \\to \\infty} \\sin(x)$, make the change of variable $x = y + \\pi$ and recall that $\\sin(y + \\pi) = -\\sin(y)$ to obtain\n\n$$\\lim_{x \\to \\infty} \\sin(x) = \\lim_{y+\\pi \\to \\infty} \\sin(y + \\pi) = \\lim_{y \\to \\infty} (-\\sin(y)) = -\\lim_{y \\to \\infty} \\sin(y).$$\n\nSince $\\lim_{x \\to \\infty} \\sin(x) = \\lim_{y \\to \\infty} \\sin(y)$ we thus have\n\n$$\\lim_{x \\to \\infty} \\sin(x) = -\\lim_{x \\to \\infty} \\sin(x)$$\n\nand hence\n\n$$\\lim_{x \\to \\infty} \\sin(x) = 0.$$\n\nIf we then make the change of variables $x = \\pi/2 + z$ and recall that $\\sin(\\pi/2 + z) = \\cos(z)$ we conclude that\n\n$$\\lim_{x \\to \\infty} \\cos(x) = 0.$$\n\nSquaring both of these limits and adding we see that\n\n$$\\lim_{x \\to \\infty} (\\sin^2(x) + \\cos^2(x)) = 0^2 + 0^2 = 0.$$\n\nOn the other hand, we have $\\sin^2(x) + \\cos^2(x) = 1$ for all $x$. Thus we have shown that $1 = 0$! What is the difficulty here?\n\nExample 1.2.5 (Interchanging sums). Consider the following fact of arithmetic. Consider any matrix of numbers, e.g.,\n\n$$\n\\begin{pmatrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9\n\\end{pmatrix}\n$$\n\nand compute the sums of all the rows and the sums of all the columns, and then total all the row sums and total all the column sums. In both cases you will get the same number—the total sum of all the entries in the matrix:\n\n$$\n\\begin{pmatrix}\n1 & 2 & 3 & 6 \\\\\n4 & 5 & 6 & 15 \\\\\n7 & 8 & 9 & 24 \\\\\n12 & 15 & 18 & 45\n\\end{pmatrix}\n$$\n\nTo put it another way, if you want to add all the entries in an $m \\times n$ matrix together, it doesn't matter whether you sum the rows first or sum the columns first, you end up with the same answer. (Before the invention of computers, accountants and bookkeepers would use this fact to guard against making errors when balancing their books.) In series notation, this fact would be expressed as\n\n$$\\sum_{i=1}^{m} \\sum_{j=1}^{n} a_{ij} = \\sum_{j=1}^{n} \\sum_{i=1}^{m} a_{ij},$$\n\nif $a_{ij}$ denoted the entry in the $i$th row and $j$th column of the matrix.\n\nNow one might think that this rule should extend easily to infinite series:\n\n$$\\sum_{i=1}^{\\infty} \\sum_{j=1}^{\\infty} a_{ij} = \\sum_{j=1}^{\\infty} \\sum_{i=1}^{\\infty} a_{ij}.$$\n\nIndeed, if you use infinite series a lot in your work, you will find yourself having to switch summations like this fairly often. Another way of saying this fact is that in an infinite matrix, the sum of the row totals should equal the sum of the column totals. However, despite the reasonableness of this statement, it is actually false! Here is a counterexample:\n\n$$\n\\begin{pmatrix}\n1 & 0 & 0 & 0 & \\cdots \\\\\n-1 & 1 & 0 & 0 & \\cdots \\\\\n0 & -1 & 1 & 0 & \\cdots \\\\\n0 & 0 & -1 & 1 & \\cdots \\\\\n\\vdots & \\vdots & \\vdots & \\vdots & \\ddots\n\\end{pmatrix}\n$$\n\nIf you sum up all the rows, and then add up all the row totals, you get 1; but if you sum up all the columns, and add up all the column totals, you get 0! So, does this mean that summations for infinite series should not be swapped and that any argument using such swappings should be distrusted? (See Theorem 8.2.2 for an answer.)\n\nExample 1.2.6 (Interchanging integrals). The interchanging of integrals is a trick which occurs in mathematics just as commonly as the interchanging of sums. Suppose one wants to compute the volume under a surface $z = f(x, y)$ (let us ignore the limits of integration for the moment). One can do it by slicing parallel to the $x$-axis: for each fixed value of $y$, we can compute an area $\\int f(x, y)\\,dx$, and then we integrate the area in the $y$ variable to obtain the volume\n\n$$\\iint f(x, y)\\,dx\\,dy.$$\n\nOr we could slice parallel to the $y$-axis for each fixed $x$ and compute an area $\\int f(x, y)\\,dy$ and then integrate in $x$-axis to obtain\n\n$$\\iint f(x, y)\\,dy\\,dx.$$\n\nThis seems to suggest that one should always be able to swap integral signs:\n\n$$\\iint f(x, y)\\,dx\\,dy = \\iint f(x, y)\\,dy\\,dx.$$\n\nAnd indeed, people swap integral signs all the time, because sometimes one variable is easier to integrate in first than the other. However, just as infinite sums sometimes cannot be swapped, integrals are also sometimes dangerous to swap. An example is with the integrand $e^{-xy} - xye^{-xy}$. Suppose we believe that we can swap the integrals:\n\n$$\\int_0^\\infty \\int_0^1 (e^{-xy} - xye^{-xy})\\,dy\\,dx = \\int_0^1 \\int_0^\\infty (e^{-xy} - xye^{-xy})\\,dx\\,dy. \\quad(1.1)$$\n\nSince\n\n$$\\int_0^1 (e^{-xy} - xye^{-xy})\\,dy = \\left[-ye^{-xy}\\right]_{y=0}^{y=1} = e^{-x},$$\n\nthe left-hand side of (1.1) is $\\int_0^\\infty e^{-x}\\,dx = \\left[-e^{-x}\\right]_0^\\infty = 1$. But since\n\n$$\\int_0^\\infty (e^{-xy} - xye^{-xy})\\,dx = \\left[-xe^{-xy}\\right]_{x=0}^{x=\\infty} = 0,$$\n\nthe right-hand side of (1.1) is $\\int_0^1 0\\,dx = 0$. Clearly $1 \\neq 0$, so there is an error somewhere; but you won't find one anywhere except in the step where we interchanged the integrals. So how do we know when to trust the interchange of integrals? (See Theorem 8.5.1 of Analysis II for a partial answer.)\n\nExample 1.2.7 (Interchanging limits). Suppose we start with the plausibly looking statement\n\n$$\\lim_{x \\to 0} \\lim_{y \\to 0} \\frac{x^2}{x^2 + y^2} = \\lim_{y \\to 0} \\lim_{x \\to 0} \\frac{x^2}{x^2 + y^2}. \\quad(1.2)$$\n\nBut we have\n\n$$\\lim_{y \\to 0} \\frac{x^2}{x^2 + y^2} = \\frac{x^2}{x^2 + 0} = 1,$$\n\nso the left-hand side of (1.2) is 1; on the other hand, we have\n\n$$\\lim_{x \\to 0} \\frac{x^2}{x^2 + y^2} = \\frac{0}{0 + y^2} = 0,$$\n\nso the right-hand side of (1.2) is 0. Since 1 is clearly not equal to zero, this suggests that interchange of limits is untrustworthy. But are there any other circumstances in which the interchange of limits is legitimate? (See Exercise 2.2.9 of Analysis II for a partial answer.)\n\nExample 1.2.8 (Interchanging limits, again). Consider the plausibly looking statement\n\n$$\\lim_{x \\to 1^-} \\lim_{n \\to \\infty} x^n = \\lim_{n \\to \\infty} \\lim_{x \\to 1^-} x^n,$$\n\nwhere the notation $x \\to 1^-$ means that $x$ is approaching 1 from the left. When $x$ is to the left of 1, then $\\lim_{n \\to \\infty} x^n = 0$, and hence the left-hand side is zero. But we also have $\\lim_{x \\to 1^-} x^n = 1$ for all $n$, and so the right-hand side limit is 1. Does this demonstrate that this type of limit interchange is always untrustworthy? (See Proposition 3.3.3 of Analysis II for an answer.)\n\nExample 1.2.9 (Interchanging limits and integrals). For any real number $y$, we have\n\n$$\\int_{-\\infty}^{\\infty} \\frac{1}{1 + (x - y)^2}\\,dx = \\arctan(x - y)\\Big|_{x=-\\infty}^{\\infty} = \\frac{\\pi}{2} - \\left(-\\frac{\\pi}{2}\\right) = \\pi.$$\n\nTaking limits as $y \\to \\infty$, we should obtain\n\n$$\\lim_{y \\to \\infty} \\int_{-\\infty}^{\\infty} \\frac{1}{1 + (x - y)^2}\\,dx = \\lim_{y \\to \\infty} \\int_{-\\infty}^{\\infty} \\frac{1}{1 + (x - y)^2}\\,dx = \\pi.$$\n\nBut for every $x$, we have $\\lim_{y \\to \\infty} \\frac{1}{1 + (x - y)^2} = 0$. So we seem to have concluded that $0 = \\pi$. What was the problem with the above argument? Should one abandon the (very useful) technique of interchanging limits and integrals? (See Theorem 3.6.1 of Analysis II for a partial answer.)\n\nExample 1.2.10 (Interchanging limits and derivatives). Observe that if $\\varepsilon > 0$, then\n\n$$\\frac{d}{dx} \\left(\\frac{x^3}{\\varepsilon^2 + x^2}\\right) = \\frac{3x^2(\\varepsilon^2 + x^2) - 2x^4}{(\\varepsilon^2 + x^2)^2}$$\n\nand in particular that\n\n$$\\left.\\frac{d}{dx} \\left(\\frac{x^3}{\\varepsilon^2 + x^2}\\right)\\right|_{x=0} = 0.$$\n\nTaking limits as $\\varepsilon \\to 0$, one might then expect that\n\n$$\\left.\\frac{d}{dx} \\left(\\frac{x^3}{0 + x^2}\\right)\\right|_{x=0} = 0.$$\n\nBut the right-hand side is $\\frac{d}{dx} x = 1$. Does this mean that it is always illegitimate to interchange limits and derivatives? (See Theorem 3.7.1 of Analysis II for an answer.)\n\nExample 1.2.11 (Interchanging derivatives). Let $f(x, y)$ be the function $f(x, y) := \\frac{xy^3}{x^2 + y^2}$. A common maneuver in analysis is to interchange two partial derivatives, thus one expects\n\n$$\\frac{\\partial^2 f}{\\partial x \\partial y}(0,0) = \\frac{\\partial^2 f}{\\partial y \\partial x}(0,0).$$\n\nBut from the quotient rule we have\n\n$$\\frac{\\partial f}{\\partial y}(x, y) = \\frac{3xy^2}{x^2 + y^2} - \\frac{2xy^4}{(x^2 + y^2)^2}$$\n\nand in particular\n\n$$\\frac{\\partial f}{\\partial y}(x, 0) = \\frac{0}{x^2} - \\frac{0}{x^4} = 0.$$\n\nThus\n\n$$\\frac{\\partial^2 f}{\\partial x \\partial y}(0,0) = 0.$$\n\nOn the other hand, from the quotient rule again we have\n\n$$\\frac{\\partial f}{\\partial x}(x, y) = \\frac{y^3}{x^2 + y^2} - \\frac{2x^2 y^3}{(x^2 + y^2)^2}$$\n\nand hence\n\n$$\\frac{\\partial f}{\\partial x}(0, y) = \\frac{y^3}{y^2} - \\frac{0}{y^4} = y.$$\n\nThus\n\n$$\\frac{\\partial^2 f}{\\partial y \\partial x}(0,0) = 1.$$\n\nSince $1 \\neq 0$, we thus seem to have shown that interchange of derivatives is untrustworthy. But are there any other circumstances in which the interchange of derivatives is legitimate? (See Theorem 6.5.4 and Exercise 6.5.1 of Analysis II for some answers.)\n\nExample 1.2.12 (L'Hôpital's rule). We are all familiar with the beautifully simple L'Hôpital's rule\n\n$$\\lim_{x \\to x_0} \\frac{f(x)}{g(x)} = \\lim_{x \\to x_0} \\frac{f'(x)}{g'(x)},$$\n\nbut one can still get led to incorrect conclusions if one applies it incorrectly. For instance, applying it to $f(x) := x$, $g(x) := 1 + x$, and $x_0 := 0$ we would obtain\n\n$$\\lim_{x \\to 0} \\frac{x}{1 + x} = \\lim_{x \\to 0} \\frac{1}{1} = 1,$$\n\nbut this is the incorrect answer, since $\\lim_{x \\to 0} \\frac{1 + x}{x} = \\frac{1 + 0}{0} = \\infty$. Of course, all that is going on here is that L'Hôpital's rule is only applicable when both $f(x)$ and $g(x)$ go to zero as $x \\to x_0$, a condition which was violated in the above example. But even when $f(x)$ and $g(x)$ do go to zero as $x \\to x_0$, there is still a possibility for an incorrect conclusion. For instance, consider the limit\n\n$$\\lim_{x \\to 0} \\frac{x^2 \\sin(x^{-4})}{x}.$$\n\nBoth numerator and denominator go to zero as $x \\to 0$, so it seems pretty safe to apply L'Hôpital's rule, to obtain\n\n$$\\lim_{x \\to 0} \\frac{x^2 \\sin(x^{-4})}{x} = \\lim_{x \\to 0} \\frac{2x\\sin(x^{-4}) - 4x^{-3}\\cos(x^{-4})}{1} = \\lim_{x \\to 0} 2x\\sin(x^{-4}) - \\lim_{x \\to 0} 4x^{-3}\\cos(x^{-4}).$$\n\nThe first limit converges to zero by the squeeze test (since the function $2x\\sin(x^{-4})$ is bounded above by $2|x|$ and below by $-2|x|$, both of which go to zero at 0). But the second limit is divergent (because $x^{-3}$ goes to infinity as $x \\to 0$, and $\\cos(x^{-4})$ does not go to zero). So the limit $\\lim_{x \\to 0} 2x\\sin(x^{-4}) - 4x^{-3}\\cos(x^{-4})$ diverges. One might then conclude using L'Hôpital's rule that $\\lim_{x \\to 0} \\frac{x^2 \\sin(x^{-4})}{x}$ also diverges; however we can clearly rewrite this limit as $\\lim_{x \\to 0} x\\sin(x^{-4})$, which goes to zero when $x \\to 0$ by the squeeze test again. This does not show that L'Hôpital's rule is untrustworthy (indeed, it is quite rigorous; see Section 10.5), but it still requires some care when applied.\n\nExample 1.2.13 (Limits and lengths). When you learn about integration and how it relates to the area under a curve, you were probably presented with some picture in which the area under the curve was approximated by a bunch of rectangles, whose area was given by a Riemann sum, and then one somehow \"took limits\" to replace that Riemann sum with an integral, which then presumably matched the actual area under the curve. Perhaps a little later, you learn how to compute the length of a curve by a similar method—approximate the curve by a bunch of line segments, compute the length of all the line segments, and then take limits again to see what you get.\n\nHowever, it should come as no surprise by now that this approach also can lead to nonsense if used incorrectly. Consider the right-angled triangle with vertices $(0, 0)$, $(1, 0)$, and $(0, 1)$, and suppose we wanted to compute the length of the hypotenuse. Pythagoras' theorem tells us that this hypotenuse has length $\\sqrt{2}$, but suppose for some reason that we did not know about Pythagoras' theorem, and wanted to compute the length using calculus methods. Well, one way to do so is to approximate the hypotenuse by horizontal and vertical edges. Pick a large number $N$, and approximate the hypotenuse by a \"staircase\" consisting of $N$ horizontal edges of equal length, alternating with $N$ vertical edges of equal length. Clearly these edges all have length $1/N$, so the total length of the staircase is $2N/N = 2$. If one takes limits as $N$ goes to infinity, the staircase clearly approaches the hypotenuse, and so in the limit we should get the length of the hypotenuse. However, as $N \\to \\infty$, the limit of $2N/N$ is $2$, not $\\sqrt{2}$, so we have an incorrect value for the length of the hypotenuse. How did this happen?\n\nThe analysis you learn in this text will help you resolve these questions, and will let you know when these rules (and others) are justified, and when they are illegal, thus separating the useful applications of these rules from the nonsense. Thus they can prevent you from making mistakes and can help you place these rules in a wider context. Moreover, as you learn analysis you will develop an \"analytical way of thinking\", which will help you whenever you come into contact with any new rules of mathematics, or when dealing with situations which are not quite covered by the standard rules. For instance, what if your functions are complex-valued instead of real-valued? What if you are working on the sphere instead of the plane? What if your functions are not continuous, but are instead things like square waves and delta functions? What if your functions, or limits of integration, or limits of summation, are occasionally infinite? You will develop a sense of why a rule in mathematics (e.g., the chain rule) works, how to adapt it to new situations, and what its limitations (if any) are; this will allow you to apply the mathematics you have already learnt more confidently and correctly.\n",
+          "content_zh": "1.2 为什么学习分析学？\n\n当涉及到分析学时，问“为什么要费心？”是一个合理的问题。知道事物为什么起作用有一定的哲学满足感，但务实的人可能会认为，人们只需要知道事物如何运作就能解决现实问题。你在入门课程中接受的微积分训练足以让你开始解决物理、化学、生物、经济学、计算机科学、金融、工程或任何你最终从事的领域中的许多问题——你当然可以使用链式法则、洛必达法则或分部积分法，而不需要知道这些规则为什么有效，或者这些规则是否有例外。然而，如果一个人在使用规则时不知道它们的来源及其适用范围的限制，就会遇到麻烦。让我举一些例子，在这些例子中，如果盲目地应用这些熟悉的规则而不知道其背后的分析原理，就会导致灾难性的后果。\n\n例 1.2.1（除以零）。这对你来说是一个非常熟悉的：消去律 $ac = bc \\implies a = b$ 当 $c = 0$ 时不成立。例如，恒等式 $1 \\times 0 = 2 \\times 0$ 成立，但如果盲目地消去 0，则得到 $1 = 2$，这是错误的。在这种情况下，很明显是在除以零；但在其他情况下，这可能更加隐蔽。\n\n例 1.2.2（发散级数）。您可能见过几何级数，例如无穷级数\n\n$$S = 1 + \\frac{1}{2} + \\frac{1}{4} + \\frac{1}{8} + \\frac{1}{16} + \\cdots.$$\n\n您可能见过以下求和技巧：如果我们设上述和为 $S$，然后两边乘以 $2$，得到\n\n$$2S = 2 + 1 + \\frac{1}{2} + \\frac{1}{4} + \\frac{1}{8} + \\cdots = 2 + S$$\n\n因此 $S = 2$，所以该级数求和为 $2$。然而，如果将相同的技巧应用于级数\n\n$$S = 1 + 2 + 4 + 8 + 16 + \\cdots,$$\n\n会得到荒谬的结果：\n\n$$2S = 2 + 4 + 8 + 16 + \\cdots = S - 1 \\implies S = -1.$$\n\n因此，得出 $1 + \\frac{1}{2} + \\frac{1}{4} + \\cdots = 2$ 的相同推理也得出 $1 + 2 + 4 + 8 + \\cdots = -1$。为什么我们相信第一个等式而不相信第二个？类似例子出现在级数\n\n$$S = 1 - 1 + 1 - 1 + 1 - 1 + \\cdots;$$\n\n我们可以写成\n\n$$S = 1 - (1 - 1 + 1 - 1 + \\cdots) = 1 - S$$\n\n因此 $S = 1/2$；或者我们可以写成\n\n$$S = (1 - 1) + (1 - 1) + (1 - 1) + \\cdots = 0 + 0 + \\cdots$$\n\n因此 $S = 0$；或者我们可以写成\n\n$$S = 1 + (-1 + 1) + (-1 + 1) + \\cdots = 1 + 0 + 0 + \\cdots$$\n\n因此 $S = 1$。哪一个是正确的？（参见练习 7.2.1 的答案。）\n\n例 1.2.3（发散序列）。这是前一个例子的一个小变体。设 $x$ 为实数，并设 $L$ 为极限\n\n$$L = \\lim_{n \\to \\infty} x^n.$$\n\n换变量 $n = m + 1$，我们有\n\n$$L = \\lim_{m+1 \\to \\infty} x^{m+1} = \\lim_{m+1 \\to \\infty} x \\times x^m = x \\lim_{m+1 \\to \\infty} x^m.$$\n\n但如果 $m+1 \\to \\infty$，则 $m \\to \\infty$，因此\n\n$$\\lim_{m+1 \\to \\infty} x^m = \\lim_{m \\to \\infty} x^m = \\lim_{n \\to \\infty} x^n = L,$$\n\n从而\n\n$$xL = L.$$\n\n到这里我们可以消去 $L$ 并得出结论：对于任意实数 $x$，$x = 1$，这是荒谬的。但既然我们已经意识到除以零的问题，我们可以更聪明一点，得出结论：要么 $x = 1$，要么 $L = 0$。特别地，我们似乎已经证明了\n\n$$\\lim_{n \\to \\infty} x^n = 0 \\text{ 对所有 } x \\neq 1.$$\n\n但如果我们将这个结论应用于某些 $x$ 的值，这个结论就是荒谬的，例如取 $x = 2$ 我们可以得出序列 $1, 2, 4, 8, \\ldots$ 收敛到零，而取 $x = -1$ 我们得出序列 $1, -1, 1, -1, \\ldots$ 也收敛到零。这些结论似乎是荒谬的；上述论证有什么问题？（参见练习 6.3.4 的答案。）\n\n例 1.2.4（函数的极限值）。从表达式 $\\lim_{x \\to \\infty} \\sin(x)$ 开始，作变量替换 $x = y + \\pi$，并注意到 $\\sin(y + \\pi) = -\\sin(y)$，可得\n\n$$\\lim_{x \\to \\infty} \\sin(x) = \\lim_{y+\\pi \\to \\infty} \\sin(y + \\pi) = \\lim_{y \\to \\infty} (-\\sin(y)) = -\\lim_{y \\to \\infty} \\sin(y).$$\n\n由于 $\\lim_{x \\to \\infty} \\sin(x) = \\lim_{y \\to \\infty} \\sin(y)$，我们得到\n\n$$\\lim_{x \\to \\infty} \\sin(x) = -\\lim_{x \\to \\infty} \\sin(x)$$\n\n从而\n\n$$\\lim_{x \\to \\infty} \\sin(x) = 0.$$\n\n然后作变量替换 $x = \\pi/2 + z$，并注意到 $\\sin(\\pi/2 + z) = \\cos(z)$，我们得出\n\n$$\\lim_{x \\to \\infty} \\cos(x) = 0.$$\n\n将这两个极限平方后相加，我们看到\n\n$$\\lim_{x \\to \\infty} (\\sin^2(x) + \\cos^2(x)) = 0^2 + 0^2 = 0.$$\n\n另一方面，我们有 $\\sin^2(x) + \\cos^2(x) = 1$ 对所有 $x$ 成立。因此我们证明了 $1 = 0$！这里的困难是什么？\n\n例 1.2.5（交换求和）。考虑下面的算术事实。考虑任意一个数字矩阵，例如，\n\n$$\n\\begin{pmatrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9\n\\end{pmatrix}\n$$\n\n计算所有行的和以及所有列的和，然后再将所有行和相加并将所有列和相加。在这两种情况下，你将得到相同的数字——矩阵中所有元素的总和：\n\n$$\n\\begin{pmatrix}\n1 & 2 & 3 & 6 \\\\\n4 & 5 & 6 & 15 \\\\\n7 & 8 & 9 & 24 \\\\\n12 & 15 & 18 & 45\n\\end{pmatrix}\n$$\n\n换句话说，如果你想把一个 $m \\times n$ 矩阵中的所有元素相加，先按行求和还是先按列求和并不重要，你最终会得到相同的答案。（在计算机发明之前，会计和簿记员会利用这个事实来防止在结账时出错。）在级数记号中，这个事实可以表示为\n\n$$\\sum_{i=1}^{m} \\sum_{j=1}^{n} a_{ij} = \\sum_{j=1}^{n} \\sum_{i=1}^{m} a_{ij},$$\n\n如果 $a_{ij}$ 表示矩阵中第 $i$ 行第 $j$ 列的元素。\n\n现在有人可能会认为这个规则应该容易推广到无穷级数：\n\n$$\\sum_{i=1}^{\\infty} \\sum_{j=1}^{\\infty} a_{ij} = \\sum_{j=1}^{\\infty} \\sum_{i=1}^{\\infty} a_{ij}.$$\n\n确实，如果你在工作中经常使用无穷级数，你会发现你需要经常像这样交换求和顺序。另一种表述这个事实的方式是，在一个无穷矩阵中，行总和的和应该等于列总和的和。然而，尽管这个说法看起来合理，但实际上它是错误的！下面是一个反例：\n\n$$\n\\begin{pmatrix}\n1 & 0 & 0 & 0 & \\cdots \\\\\n-1 & 1 & 0 & 0 & \\cdots \\\\\n0 & -1 & 1 & 0 & \\cdots \\\\\n0 & 0 & -1 & 1 & \\cdots \\\\\n\\vdots & \\vdots & \\vdots & \\vdots & \\ddots\n\\end{pmatrix}\n$$\n\n如果你把所有行相加，然后再把所有行总和相加，你得到 1；但如果你把所有列相加，再把所有列总和相加，你得到 0！那么，这是否意味着无穷级数的求和不应该交换顺序，任何使用这种交换的论证都应该受到质疑？（参见定理 8.2.2 的答案。）\n\n例 1.2.6（积分的互换）。积分的互换是数学中与级数的互换同样常见的技巧。假设想要计算曲面 $z = f(x, y)$ 下的体积（暂时忽略积分限）。可以通过平行于 $x$ 轴切片来做：对于每个固定的 $y$ 值，我们可以计算面积 $\\int f(x, y)\\,dx$，然后对 $y$ 变量积分该面积以得到体积\n\n$$\\iint f(x, y)\\,dx\\,dy.$$\n\n或者我们可以对每个固定的 $x$ 平行于 $y$ 轴切片，计算面积 $\\int f(x, y)\\,dy$，然后对 $x$ 轴积分得到\n\n$$\\iint f(x, y)\\,dy\\,dx.$$\n\n这似乎表明人们应该总是能够交换积分符号：\n\n$$\\iint f(x, y)\\,dx\\,dy = \\iint f(x, y)\\,dy\\,dx.$$\n\n事实上，人们经常交换积分符号，因为有时一个变量比另一个更容易先积分。然而，正如无穷级数有时不能交换一样，积分交换有时也是危险的。被积函数 $e^{-xy} - xye^{-xy}$ 就是一个例子。假设我们相信可以交换积分：\n\n$$\\int_0^\\infty \\int_0^1 (e^{-xy} - xye^{-xy})\\,dy\\,dx = \\int_0^1 \\int_0^\\infty (e^{-xy} - xye^{-xy})\\,dx\\,dy. \\quad(1.1)$$\n\n由于\n\n$$\\int_0^1 (e^{-xy} - xye^{-xy})\\,dy = \\left[-ye^{-xy}\\right]_{y=0}^{y=1} = e^{-x},$$\n\n式(1.1)的左侧是 $\\int_0^\\infty e^{-x}\\,dx = \\left[-e^{-x}\\right]_0^\\infty = 1$。但由于\n\n$$\\int_0^\\infty (e^{-xy} - xye^{-xy})\\,dx = \\left[-xe^{-xy}\\right]_{x=0}^{x=\\infty} = 0,$$\n\n式(1.1)的右侧是 $\\int_0^1 0\\,dx = 0$。显然 $1 \\neq 0$，所以某处有错误；但除了交换积分的那一步，你在任何地方都找不到错误。那么我们如何知道何时可以信任积分的交换？（参见《分析 II》定理8.5.1的部分答案。）\n\n例 1.2.7（交换极限）。假设我们从一个看似合理的命题开始\n\n$$\\lim_{x \\to 0} \\lim_{y \\to 0} \\frac{x^2}{x^2 + y^2} = \\lim_{y \\to 0} \\lim_{x \\to 0} \\frac{x^2}{x^2 + y^2}. \\quad(1.2)$$\n\n但是我们有\n\n$$\\lim_{y \\to 0} \\frac{x^2}{x^2 + y^2} = \\frac{x^2}{x^2 + 0} = 1,$$\n\n所以(1.2)的左侧是1；另一方面，我们有\n\n$$\\lim_{x \\to 0} \\frac{x^2}{x^2 + y^2} = \\frac{0}{0 + y^2} = 0,$$\n\n所以(1.2)的右侧是0。由于1显然不等于0，这表明极限的交换是不可靠的。但是在什么其他情况下极限的交换是合法的呢？（参见《分析 II》练习题2.2.9的部分答案。）\n\n例 1.2.8（再次交换极限）。考虑这个看起来合理的命题\n\n$$\\lim_{x \\to 1^-} \\lim_{n \\to \\infty} x^n = \\lim_{n \\to \\infty} \\lim_{x \\to 1^-} x^n,$$\n\n其中记号 $x \\to 1^-$ 表示 $x$ 从左侧趋近于 1。当 $x$ 在 1 的左侧时，有 $\\lim_{n \\to \\infty} x^n = 0$，从而左边为 0。但我们也有 $\\lim_{x \\to 1^-} x^n = 1$ 对所有 $n$ 成立，因此右边的极限为 1。这是否说明这类极限交换总是不可靠的？（参见《分析 II》命题 3.3.3 的答案。）\n\n例 1.2.9（交换极限与积分）。对于任意实数 $y$，我们有\n\n$$\\int_{-\\infty}^{\\infty} \\frac{1}{1 + (x - y)^2}\\,dx = \\arctan(x - y)\\Big|_{x=-\\infty}^{\\infty} = \\frac{\\pi}{2} - \\left(-\\frac{\\pi}{2}\\right) = \\pi.$$\n\n取 $y \\to \\infty$ 时的极限，我们应得到\n\n$$\\lim_{y \\to \\infty} \\int_{-\\infty}^{\\infty} \\frac{1}{1 + (x - y)^2}\\,dx = \\lim_{y \\to \\infty} \\int_{-\\infty}^{\\infty} \\frac{1}{1 + (x - y)^2}\\,dx = \\pi.$$\n\n但对于每个 $x$，我们有 $\\lim_{y \\to \\infty} \\frac{1}{1 + (x - y)^2} = 0$。于是我们似乎得到了 $0 = \\pi$。上述论证的问题出在哪里？是否应该放弃（非常有用的）交换极限与积分的技巧？（参见《分析 II》定理 3.6.1 中的部分答案。）\n\n例 1.2.10（互换极限与导数）。注意到如果 $\\varepsilon > 0$，则\n\n$$\\frac{d}{dx} \\left(\\frac{x^3}{\\varepsilon^2 + x^2}\\right) = \\frac{3x^2(\\varepsilon^2 + x^2) - 2x^4}{(\\varepsilon^2 + x^2)^2}$$\n\n特别地，\n\n$$\\left.\\frac{d}{dx} \\left(\\frac{x^3}{\\varepsilon^2 + x^2}\\right)\\right|_{x=0} = 0。$$\n\n当 $\\varepsilon \\to 0$ 时取极限，则可预期\n\n$$\\left.\\frac{d}{dx} \\left(\\frac{x^3}{0 + x^2}\\right)\\right|_{x=0} = 0。$$\n\n但右边是 $\\frac{d}{dx} x = 1$。这是否意味着互换极限与导数总是不合法的？（参见《分析 II》定理 3.7.1 中的答案。）\n\n例 1.2.11（交换导数）。设 $f(x, y)$ 为函数 $f(x, y) := \\frac{xy^3}{x^2 + y^2}$。在分析中，一个常见的技巧是交换两个偏导数，因此人们预期\n\n$$\\frac{\\partial^2 f}{\\partial x \\partial y}(0,0) = \\frac{\\partial^2 f}{\\partial y \\partial x}(0,0)。$$\n\n但由商法则我们得到\n\n$$\\frac{\\partial f}{\\partial y}(x, y) = \\frac{3xy^2}{x^2 + y^2} - \\frac{2xy^4}{(x^2 + y^2)^2}$$\n\n特别地\n\n$$\\frac{\\partial f}{\\partial y}(x, 0) = \\frac{0}{x^2} - \\frac{0}{x^4} = 0。$$\n\n因此\n\n$$\\frac{\\partial^2 f}{\\partial x \\partial y}(0,0) = 0。$$\n\n另一方面，再次由商法则我们得到\n\n$$\\frac{\\partial f}{\\partial x}(x, y) = \\frac{y^3}{x^2 + y^2} - \\frac{2x^2 y^3}{(x^2 + y^2)^2}$$\n\n从而\n\n$$\\frac{\\partial f}{\\partial x}(0, y) = \\frac{y^3}{y^2} - \\frac{0}{y^4} = y。$$\n\n因此\n\n$$\\frac{\\partial^2 f}{\\partial y \\partial x}(0,0) = 1。$$\n\n由于 $1 \\neq 0$，我们似乎由此表明了导数的交换是不可靠的。但在什么其他情况下交换导数是合法的？（参见《分析 II》定理6.5.4和习题6.5.1中的一些答案。）\n\n例 1.2.12（洛必达法则）。我们都非常熟悉这个优美简洁的洛必达法则\n\n$$\\lim_{x \\to x_0} \\frac{f(x)}{g(x)} = \\lim_{x \\to x_0} \\frac{f'(x)}{g'(x)},$$\n\n但如果应用不当，仍然可能得出错误的结论。例如，对于 $f(x) := x$，$g(x) := 1 + x$，和 $x_0 := 0$ 应用该法则，我们会得到\n\n$$\\lim_{x \\to 0} \\frac{x}{1 + x} = \\lim_{x \\to 0} \\frac{1}{1} = 1,$$\n\n但这是错误的答案，因为 $\\lim_{x \\to 0} \\frac{1 + x}{x} = \\frac{1 + 0}{0} = \\infty$。当然，这里出现的问题在于，洛必达法则仅在 $f(x)$ 和 $g(x)$ 在 $x \\to x_0$ 时都趋近于零时才适用，而上述例子中这个条件并未满足。但即使 $f(x)$ 和 $g(x)$ 确实在 $x \\to x_0$ 时趋近于零，仍然有可能得出错误的结论。例如，考虑极限\n\n$$\\lim_{x \\to 0} \\frac{x^2 \\sin(x^{-4})}{x}.$$\n\n分子和分母都趋近于零，因此似乎可以安全地应用洛必达法则，得到\n\n$$\\lim_{x \\to 0} \\frac{x^2 \\sin(x^{-4})}{x} = \\lim_{x \\to 0} \\frac{2x\\sin(x^{-4}) - 4x^{-3}\\cos(x^{-4})}{1} = \\lim_{x \\to 0} 2x\\sin(x^{-4}) - \\lim_{x \\to 0} 4x^{-3}\\cos(x^{-4}).$$\n\n第一个极限通过夹挤定理收敛于零（因为函数 $2x\\sin(x^{-4})$ 被 $2|x|$ 上界和 $-2|x|$ 下界所约束，两者都在 0 处趋近于零）。但第二个极限是发散的（因为 $x^{-3}$ 在 $x \\to 0$ 时趋近于无穷大，而 $\\cos(x^{-4})$ 不会趋近于零）。所以极限 $\\lim_{x \\to 0} 2x\\sin(x^{-4}) - 4x^{-3}\\cos(x^{-4})$ 发散。人们可能会由此用洛必达法则得出 $\\lim_{x \\to 0} \\frac{x^2 \\sin(x^{-4})}{x}$ 也是发散的结论；然而我们可以清楚地将其改写为 $\\lim_{x \\to 0} x\\sin(x^{-4})$，再次通过夹挤定理知其在 $x \\to 0$ 时趋近于零。这并不是说洛必达法则不可靠（事实上它相当严谨；参见 10.5 节），但应用时仍需谨慎。\n\n例 1.2.13（极限与长度）。当你们学习积分以及它如何与曲线下的面积相关时，你们可能看到过这样的图示：曲线下的面积被一堆矩形近似，这些矩形的面积由黎曼和给出，然后某人以某种方式\"取极限\"将那个黎曼和替换为积分，这积分随后大概会匹配曲线下的实际面积。也许稍后一些，你们学习如何用类似的方法计算曲线的长度——用一堆线段近似曲线，计算所有线段的长度，然后再次取极限来看得到什么。\n\n然而，到目前为止，这应该不足为奇：这种方法如果使用不当也会导致无意义的结果。考虑顶点为$(0, 0)$、$(1, 0)$和$(0, 1)$的直角三角形，并假设我们想计算斜边的长度。勾股定理告诉我们这条斜边的长度是$\\sqrt{2}$，但假设出于某种原因我们不知道勾股定理，想用微积分方法来计算长度。一个方法是用水平和竖直边来近似斜边。选取一个大的数$N$，用\"阶梯\"来近似斜边，这个阶梯由$N$条等长的水平边和$N$条等长的竖直边交替组成。显然这些边的长度都是$1/N$，所以阶梯的总长度是$2N/N = 2$。如果取$N$趋于无穷时的极限，阶梯显然逼近斜边，因此在极限中我们应该得到斜边的长度。然而，当$N \\to \\infty$时，$2N/N$的极限是$2$，而不是$\\sqrt{2}$，所以我们得到了斜边长度的错误值。这是如何发生的？\n\n本书中的分析将帮助你们解决这些问题，并将告诉你们这些规则（以及其他规则）在何时是合理的，何是非法的，从而将这些规则的有用应用与无意义的内容区分开来。因此，它们可以防止你们犯错，并帮助你们将这些规则置于更广阔的背景中。此外，当你们学习分析学时，你们将培养一种\"分析思维方式\"，这将帮助你们在接触任何新的数学规则时，或在处理不完全符合标准规则的情况时。例如，如果你们的函数是复值的而不是实值的怎么办？如果你们在球面上而不是平面上工作怎么办？如果你们的函数不是连续的，而是像方波和狄拉克$\\delta$函数那样的东西怎么办？如果你们的函数、积分的极限或求和的极限偶尔是无穷的怎么办？你们将培养一种理解数学规则（例如链式法则）为何有效、如何适应新情况、以及它的局限性（如果有的话）的意识；这将使你们能够更加自信和正确地应用你们已经学过的数学。\n\n"
+        }
       ]
     },
     {
@@ -14,9 +28,30 @@
       "title_en": "Starting at the Beginning: The Natural Numbers",
       "title_zh": "从头开始：自然数",
       "sections": [
-        {"number": "2.1", "title_en": "The Peano Axioms", "title_zh": "Peano 公理", "pdf_page": 12, "content_en": "", "content_zh": ""},
-        {"number": "2.2", "title_en": "Addition", "title_zh": "加法", "pdf_page": 20, "content_en": "", "content_zh": ""},
-        {"number": "2.3", "title_en": "Multiplication", "title_zh": "乘法", "pdf_page": 24, "content_en": "", "content_zh": ""}
+        {
+          "number": "2.1",
+          "title_en": "The Peano Axioms",
+          "title_zh": "Peano 公理",
+          "pdf_page": 12,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "2.2",
+          "title_en": "Addition",
+          "title_zh": "加法",
+          "pdf_page": 20,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "2.3",
+          "title_en": "Multiplication",
+          "title_zh": "乘法",
+          "pdf_page": 24,
+          "content_en": "",
+          "content_zh": ""
+        }
       ]
     },
     {
@@ -24,12 +59,54 @@
       "title_en": "Set Theory",
       "title_zh": "集合论",
       "sections": [
-        {"number": "3.1", "title_en": "Fundamentals", "title_zh": "基础", "pdf_page": 27, "content_en": "", "content_zh": ""},
-        {"number": "3.2", "title_en": "Russell's Paradox (Optional)", "title_zh": "罗素悖论（选读）", "pdf_page": 38, "content_en": "", "content_zh": ""},
-        {"number": "3.3", "title_en": "Functions", "title_zh": "函数", "pdf_page": 40, "content_en": "", "content_zh": ""},
-        {"number": "3.4", "title_en": "Images and Inverse Images", "title_zh": "像与逆像", "pdf_page": 47, "content_en": "", "content_zh": ""},
-        {"number": "3.5", "title_en": "Cartesian Products", "title_zh": "笛卡尔积", "pdf_page": 52, "content_en": "", "content_zh": ""},
-        {"number": "3.6", "title_en": "Cardinality of Sets", "title_zh": "集合的基数", "pdf_page": 57, "content_en": "", "content_zh": ""}
+        {
+          "number": "3.1",
+          "title_en": "Fundamentals",
+          "title_zh": "基础",
+          "pdf_page": 27,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "3.2",
+          "title_en": "Russell's Paradox (Optional)",
+          "title_zh": "罗素悖论（选读）",
+          "pdf_page": 38,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "3.3",
+          "title_en": "Functions",
+          "title_zh": "函数",
+          "pdf_page": 40,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "3.4",
+          "title_en": "Images and Inverse Images",
+          "title_zh": "像与逆像",
+          "pdf_page": 47,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "3.5",
+          "title_en": "Cartesian Products",
+          "title_zh": "笛卡尔积",
+          "pdf_page": 52,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "3.6",
+          "title_en": "Cardinality of Sets",
+          "title_zh": "集合的基数",
+          "pdf_page": 57,
+          "content_en": "",
+          "content_zh": ""
+        }
       ]
     },
     {
@@ -37,10 +114,38 @@
       "title_en": "Integers and Rationals",
       "title_zh": "整数与有理数",
       "sections": [
-        {"number": "4.1", "title_en": "The Integers", "title_zh": "整数", "pdf_page": 63, "content_en": "", "content_zh": ""},
-        {"number": "4.2", "title_en": "The Rationals", "title_zh": "有理数", "pdf_page": 69, "content_en": "", "content_zh": ""},
-        {"number": "4.3", "title_en": "Absolute Value and Exponentiation", "title_zh": "绝对值与指数运算", "pdf_page": 73, "content_en": "", "content_zh": ""},
-        {"number": "4.4", "title_en": "Gaps in the Rational Numbers", "title_zh": "有理数的空隙", "pdf_page": 76, "content_en": "", "content_zh": ""}
+        {
+          "number": "4.1",
+          "title_en": "The Integers",
+          "title_zh": "整数",
+          "pdf_page": 63,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "4.2",
+          "title_en": "The Rationals",
+          "title_zh": "有理数",
+          "pdf_page": 69,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "4.3",
+          "title_en": "Absolute Value and Exponentiation",
+          "title_zh": "绝对值与指数运算",
+          "pdf_page": 73,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "4.4",
+          "title_en": "Gaps in the Rational Numbers",
+          "title_zh": "有理数的空隙",
+          "pdf_page": 76,
+          "content_en": "",
+          "content_zh": ""
+        }
       ]
     },
     {
@@ -48,12 +153,54 @@
       "title_en": "The Real Numbers",
       "title_zh": "实数",
       "sections": [
-        {"number": "5.1", "title_en": "Cauchy Sequences", "title_zh": "柯西序列", "pdf_page": 82, "content_en": "", "content_zh": ""},
-        {"number": "5.2", "title_en": "Equivalent Cauchy Sequences", "title_zh": "等价柯西序列", "pdf_page": 86, "content_en": "", "content_zh": ""},
-        {"number": "5.3", "title_en": "The Construction of the Real Numbers", "title_zh": "实数的构造", "pdf_page": 88, "content_en": "", "content_zh": ""},
-        {"number": "5.4", "title_en": "Ordering the Reals", "title_zh": "实数的排序", "pdf_page": 95, "content_en": "", "content_zh": ""},
-        {"number": "5.5", "title_en": "The Least Upper Bound Property", "title_zh": "最小上界性质", "pdf_page": 100, "content_en": "", "content_zh": ""},
-        {"number": "5.6", "title_en": "Real Exponentiation, Part I", "title_zh": "实数指数运算（一）", "pdf_page": 104, "content_en": "", "content_zh": ""}
+        {
+          "number": "5.1",
+          "title_en": "Cauchy Sequences",
+          "title_zh": "柯西序列",
+          "pdf_page": 82,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "5.2",
+          "title_en": "Equivalent Cauchy Sequences",
+          "title_zh": "等价柯西序列",
+          "pdf_page": 86,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "5.3",
+          "title_en": "The Construction of the Real Numbers",
+          "title_zh": "实数的构造",
+          "pdf_page": 88,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "5.4",
+          "title_en": "Ordering the Reals",
+          "title_zh": "实数的排序",
+          "pdf_page": 95,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "5.5",
+          "title_en": "The Least Upper Bound Property",
+          "title_zh": "最小上界性质",
+          "pdf_page": 100,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "5.6",
+          "title_en": "Real Exponentiation, Part I",
+          "title_zh": "实数指数运算（一）",
+          "pdf_page": 104,
+          "content_en": "",
+          "content_zh": ""
+        }
       ]
     },
     {
@@ -61,13 +208,62 @@
       "title_en": "Limits of Sequences",
       "title_zh": "数列的极限",
       "sections": [
-        {"number": "6.1", "title_en": "Convergence and Limit Laws", "title_zh": "收敛与极限法则", "pdf_page": 109, "content_en": "", "content_zh": ""},
-        {"number": "6.2", "title_en": "The Extended Real Number System", "title_zh": "扩展实数系", "pdf_page": 115, "content_en": "", "content_zh": ""},
-        {"number": "6.3", "title_en": "Suprema and Infima of Sequences", "title_zh": "数列的上确界与下确界", "pdf_page": 118, "content_en": "", "content_zh": ""},
-        {"number": "6.4", "title_en": "Limsup, Liminf, and Limit Points", "title_zh": "上极限、下极限与极限点", "pdf_page": 120, "content_en": "", "content_zh": ""},
-        {"number": "6.5", "title_en": "Some Standard Limits", "title_zh": "一些标准极限", "pdf_page": 127, "content_en": "", "content_zh": ""},
-        {"number": "6.6", "title_en": "Subsequences", "title_zh": "子序列", "pdf_page": 128, "content_en": "", "content_zh": ""},
-        {"number": "6.7", "title_en": "Real Exponentiation, Part II", "title_zh": "实数指数运算（二）", "pdf_page": 131, "content_en": "", "content_zh": ""}
+        {
+          "number": "6.1",
+          "title_en": "Convergence and Limit Laws",
+          "title_zh": "收敛与极限法则",
+          "pdf_page": 109,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "6.2",
+          "title_en": "The Extended Real Number System",
+          "title_zh": "扩展实数系",
+          "pdf_page": 115,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "6.3",
+          "title_en": "Suprema and Infima of Sequences",
+          "title_zh": "数列的上确界与下确界",
+          "pdf_page": 118,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "6.4",
+          "title_en": "Limsup, Liminf, and Limit Points",
+          "title_zh": "上极限、下极限与极限点",
+          "pdf_page": 120,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "6.5",
+          "title_en": "Some Standard Limits",
+          "title_zh": "一些标准极限",
+          "pdf_page": 127,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "6.6",
+          "title_en": "Subsequences",
+          "title_zh": "子序列",
+          "pdf_page": 128,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "6.7",
+          "title_en": "Real Exponentiation, Part II",
+          "title_zh": "实数指数运算（二）",
+          "pdf_page": 131,
+          "content_en": "",
+          "content_zh": ""
+        }
       ]
     },
     {
@@ -75,11 +271,46 @@
       "title_en": "Series",
       "title_zh": "级数",
       "sections": [
-        {"number": "7.1", "title_en": "Finite Series", "title_zh": "有限级数", "pdf_page": 135, "content_en": "", "content_zh": ""},
-        {"number": "7.2", "title_en": "Infinite Series", "title_zh": "无穷级数", "pdf_page": 144, "content_en": "", "content_zh": ""},
-        {"number": "7.3", "title_en": "Sums of Non-negative Numbers", "title_zh": "非负数求和", "pdf_page": 148, "content_en": "", "content_zh": ""},
-        {"number": "7.4", "title_en": "Rearrangement of Series", "title_zh": "级数的重排", "pdf_page": 152, "content_en": "", "content_zh": ""},
-        {"number": "7.5", "title_en": "The Root and Ratio Tests", "title_zh": "根值判别法与比值判别法", "pdf_page": 155, "content_en": "", "content_zh": ""}
+        {
+          "number": "7.1",
+          "title_en": "Finite Series",
+          "title_zh": "有限级数",
+          "pdf_page": 135,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "7.2",
+          "title_en": "Infinite Series",
+          "title_zh": "无穷级数",
+          "pdf_page": 144,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "7.3",
+          "title_en": "Sums of Non-negative Numbers",
+          "title_zh": "非负数求和",
+          "pdf_page": 148,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "7.4",
+          "title_en": "Rearrangement of Series",
+          "title_zh": "级数的重排",
+          "pdf_page": 152,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "7.5",
+          "title_en": "The Root and Ratio Tests",
+          "title_zh": "根值判别法与比值判别法",
+          "pdf_page": 155,
+          "content_en": "",
+          "content_zh": ""
+        }
       ]
     },
     {
@@ -87,11 +318,46 @@
       "title_en": "Infinite Sets",
       "title_zh": "无限集合",
       "sections": [
-        {"number": "8.1", "title_en": "Countability", "title_zh": "可数性", "pdf_page": 159, "content_en": "", "content_zh": ""},
-        {"number": "8.2", "title_en": "Summation on Infinite Sets", "title_zh": "无限集合上的求和", "pdf_page": 165, "content_en": "", "content_zh": ""},
-        {"number": "8.3", "title_en": "Uncountable Sets", "title_zh": "不可数集合", "pdf_page": 171, "content_en": "", "content_zh": ""},
-        {"number": "8.4", "title_en": "The Axiom of Choice", "title_zh": "选择公理", "pdf_page": 173, "content_en": "", "content_zh": ""},
-        {"number": "8.5", "title_en": "Ordered Sets", "title_zh": "有序集合", "pdf_page": 176, "content_en": "", "content_zh": ""}
+        {
+          "number": "8.1",
+          "title_en": "Countability",
+          "title_zh": "可数性",
+          "pdf_page": 159,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "8.2",
+          "title_en": "Summation on Infinite Sets",
+          "title_zh": "无限集合上的求和",
+          "pdf_page": 165,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "8.3",
+          "title_en": "Uncountable Sets",
+          "title_zh": "不可数集合",
+          "pdf_page": 171,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "8.4",
+          "title_en": "The Axiom of Choice",
+          "title_zh": "选择公理",
+          "pdf_page": 173,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "8.5",
+          "title_en": "Ordered Sets",
+          "title_zh": "有序集合",
+          "pdf_page": 176,
+          "content_en": "",
+          "content_zh": ""
+        }
       ]
     },
     {
@@ -99,16 +365,86 @@
       "title_en": "Continuous Functions on R",
       "title_zh": "实数轴上的连续函数",
       "sections": [
-        {"number": "9.1",  "title_en": "Subsets of the Real Line", "title_zh": "实数集的子集", "pdf_page": 183, "content_en": "", "content_zh": ""},
-        {"number": "9.2",  "title_en": "The Algebra of Real-Valued Functions", "title_zh": "实值函数的代数", "pdf_page": 189, "content_en": "", "content_zh": ""},
-        {"number": "9.3",  "title_en": "Limiting Values of Functions", "title_zh": "函数的极限值", "pdf_page": 191, "content_en": "", "content_zh": ""},
-        {"number": "9.4",  "title_en": "Continuous Functions", "title_zh": "连续函数", "pdf_page": 197, "content_en": "", "content_zh": ""},
-        {"number": "9.5",  "title_en": "Left and Right Limits", "title_zh": "左极限与右极限", "pdf_page": 200, "content_en": "", "content_zh": ""},
-        {"number": "9.6",  "title_en": "The Maximum Principle", "title_zh": "极值原理", "pdf_page": 203, "content_en": "", "content_zh": ""},
-        {"number": "9.7",  "title_en": "The Intermediate Value Theorem", "title_zh": "介值定理", "pdf_page": 206, "content_en": "", "content_zh": ""},
-        {"number": "9.8",  "title_en": "Monotonic Functions", "title_zh": "单调函数", "pdf_page": 208, "content_en": "", "content_zh": ""},
-        {"number": "9.9",  "title_en": "Uniform Continuity", "title_zh": "一致连续", "pdf_page": 210, "content_en": "", "content_zh": ""},
-        {"number": "9.10", "title_en": "Limits at Infinity", "title_zh": "无穷远处的极限", "pdf_page": 215, "content_en": "", "content_zh": ""}
+        {
+          "number": "9.1",
+          "title_en": "Subsets of the Real Line",
+          "title_zh": "实数集的子集",
+          "pdf_page": 183,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "9.2",
+          "title_en": "The Algebra of Real-Valued Functions",
+          "title_zh": "实值函数的代数",
+          "pdf_page": 189,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "9.3",
+          "title_en": "Limiting Values of Functions",
+          "title_zh": "函数的极限值",
+          "pdf_page": 191,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "9.4",
+          "title_en": "Continuous Functions",
+          "title_zh": "连续函数",
+          "pdf_page": 197,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "9.5",
+          "title_en": "Left and Right Limits",
+          "title_zh": "左极限与右极限",
+          "pdf_page": 200,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "9.6",
+          "title_en": "The Maximum Principle",
+          "title_zh": "极值原理",
+          "pdf_page": 203,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "9.7",
+          "title_en": "The Intermediate Value Theorem",
+          "title_zh": "介值定理",
+          "pdf_page": 206,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "9.8",
+          "title_en": "Monotonic Functions",
+          "title_zh": "单调函数",
+          "pdf_page": 208,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "9.9",
+          "title_en": "Uniform Continuity",
+          "title_zh": "一致连续",
+          "pdf_page": 210,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "9.10",
+          "title_en": "Limits at Infinity",
+          "title_zh": "无穷远处的极限",
+          "pdf_page": 215,
+          "content_en": "",
+          "content_zh": ""
+        }
       ]
     },
     {
@@ -116,11 +452,46 @@
       "title_en": "Differentiation of Functions",
       "title_zh": "函数的微分",
       "sections": [
-        {"number": "10.1", "title_en": "Basic Definitions", "title_zh": "基本定义", "pdf_page": 217, "content_en": "", "content_zh": ""},
-        {"number": "10.2", "title_en": "Local Maxima, Local Minima, and Derivatives", "title_zh": "局部极大值、局部极小值与导数", "pdf_page": 222, "content_en": "", "content_zh": ""},
-        {"number": "10.3", "title_en": "Monotone Functions and Derivatives", "title_zh": "单调函数与导数", "pdf_page": 224, "content_en": "", "content_zh": ""},
-        {"number": "10.4", "title_en": "Inverse Functions and Derivatives", "title_zh": "反函数与导数", "pdf_page": 225, "content_en": "", "content_zh": ""},
-        {"number": "10.5", "title_en": "L'Hôpital's Rule", "title_zh": "洛必达法则", "pdf_page": 228, "content_en": "", "content_zh": ""}
+        {
+          "number": "10.1",
+          "title_en": "Basic Definitions",
+          "title_zh": "基本定义",
+          "pdf_page": 217,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "10.2",
+          "title_en": "Local Maxima, Local Minima, and Derivatives",
+          "title_zh": "局部极大值、局部极小值与导数",
+          "pdf_page": 222,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "10.3",
+          "title_en": "Monotone Functions and Derivatives",
+          "title_zh": "单调函数与导数",
+          "pdf_page": 224,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "10.4",
+          "title_en": "Inverse Functions and Derivatives",
+          "title_zh": "反函数与导数",
+          "pdf_page": 225,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "10.5",
+          "title_en": "L'Hôpital's Rule",
+          "title_zh": "洛必达法则",
+          "pdf_page": 228,
+          "content_en": "",
+          "content_zh": ""
+        }
       ]
     },
     {
@@ -128,16 +499,86 @@
       "title_en": "The Riemann Integral",
       "title_zh": "黎曼积分",
       "sections": [
-        {"number": "11.1",  "title_en": "Partitions", "title_zh": "分割", "pdf_page": 232, "content_en": "", "content_zh": ""},
-        {"number": "11.2",  "title_en": "Piecewise Constant Functions", "title_zh": "分段常数函数", "pdf_page": 235, "content_en": "", "content_zh": ""},
-        {"number": "11.3",  "title_en": "Upper and Lower Riemann Integrals", "title_zh": "上黎曼积分与下黎曼积分", "pdf_page": 238, "content_en": "", "content_zh": ""},
-        {"number": "11.4",  "title_en": "Basic Properties of the Riemann Integral", "title_zh": "黎曼积分的基本性质", "pdf_page": 242, "content_en": "", "content_zh": ""},
-        {"number": "11.5",  "title_en": "Riemann Integrability of Continuous Functions", "title_zh": "连续函数的黎曼可积性", "pdf_page": 246, "content_en": "", "content_zh": ""},
-        {"number": "11.6",  "title_en": "Riemann Integrability of Monotone Functions", "title_zh": "单调函数的黎曼可积性", "pdf_page": 249, "content_en": "", "content_zh": ""},
-        {"number": "11.7",  "title_en": "A Non-Riemann Integrable Function", "title_zh": "一个非黎曼可积的函数", "pdf_page": 251, "content_en": "", "content_zh": ""},
-        {"number": "11.8",  "title_en": "The Riemann–Stieltjes Integral", "title_zh": "黎曼-斯蒂尔吉斯积分", "pdf_page": 252, "content_en": "", "content_zh": ""},
-        {"number": "11.9",  "title_en": "The Two Fundamental Theorems of Calculus", "title_zh": "微积分基本定理", "pdf_page": 255, "content_en": "", "content_zh": ""},
-        {"number": "11.10", "title_en": "Consequences of the Fundamental Theorems", "title_zh": "基本定理的应用", "pdf_page": 259, "content_en": "", "content_zh": ""}
+        {
+          "number": "11.1",
+          "title_en": "Partitions",
+          "title_zh": "分割",
+          "pdf_page": 232,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "11.2",
+          "title_en": "Piecewise Constant Functions",
+          "title_zh": "分段常数函数",
+          "pdf_page": 235,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "11.3",
+          "title_en": "Upper and Lower Riemann Integrals",
+          "title_zh": "上黎曼积分与下黎曼积分",
+          "pdf_page": 238,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "11.4",
+          "title_en": "Basic Properties of the Riemann Integral",
+          "title_zh": "黎曼积分的基本性质",
+          "pdf_page": 242,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "11.5",
+          "title_en": "Riemann Integrability of Continuous Functions",
+          "title_zh": "连续函数的黎曼可积性",
+          "pdf_page": 246,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "11.6",
+          "title_en": "Riemann Integrability of Monotone Functions",
+          "title_zh": "单调函数的黎曼可积性",
+          "pdf_page": 249,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "11.7",
+          "title_en": "A Non-Riemann Integrable Function",
+          "title_zh": "一个非黎曼可积的函数",
+          "pdf_page": 251,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "11.8",
+          "title_en": "The Riemann–Stieltjes Integral",
+          "title_zh": "黎曼-斯蒂尔吉斯积分",
+          "pdf_page": 252,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "11.9",
+          "title_en": "The Two Fundamental Theorems of Calculus",
+          "title_zh": "微积分基本定理",
+          "pdf_page": 255,
+          "content_en": "",
+          "content_zh": ""
+        },
+        {
+          "number": "11.10",
+          "title_en": "Consequences of the Fundamental Theorems",
+          "title_zh": "基本定理的应用",
+          "pdf_page": 259,
+          "content_en": "",
+          "content_zh": ""
+        }
       ]
     },
     {
@@ -145,7 +586,14 @@
       "title_en": "Appendix A: The Basics of Mathematical Logic",
       "title_zh": "附录 A：数学逻辑基础",
       "sections": [
-        {"number": "A", "title_en": "Mathematical Logic", "title_zh": "数学逻辑", "pdf_page": 265, "content_en": "", "content_zh": ""}
+        {
+          "number": "A",
+          "title_en": "Mathematical Logic",
+          "title_zh": "数学逻辑",
+          "pdf_page": 265,
+          "content_en": "",
+          "content_zh": ""
+        }
       ]
     },
     {
@@ -153,7 +601,14 @@
       "title_en": "Appendix B: The Decimal System",
       "title_zh": "附录 B：十进制",
       "sections": [
-        {"number": "B", "title_en": "The Decimal System", "title_zh": "十进制", "pdf_page": 287, "content_en": "", "content_zh": ""}
+        {
+          "number": "B",
+          "title_en": "The Decimal System",
+          "title_zh": "十进制",
+          "pdf_page": 287,
+          "content_en": "",
+          "content_zh": ""
+        }
       ]
     }
   ]
