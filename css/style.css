@@ -517,10 +517,13 @@ body.sidebar-open .sidebar-overlay {
 
 @media (max-width: 600px) {
   .header-inner { padding: 0 12px 0 8px; }
-  .site-title { font-size: 0.9rem; }
+  .site-title { font-size: 0.82rem; }
   .sec-title { font-size: 1.5rem; }
-  .ctrl-btn { padding: 6px 10px; }
-  .lang-label { display: none; }
+  .ctrl-btn {
+    padding: 6px 10px;
+    min-width: 52px;
+  }
+  .lang-label { display: inline; }
   .main-content { padding: 20px 16px 48px; }
 
   /* Sidebar takes full width on very small screens */
