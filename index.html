@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analysis I - 陶哲轩实分析 中文版</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <h1 class="site-title">Analysis I · 陶哲轩实分析</h1>
+    </div>
+    <div class="header-right">
+      <button id="lang-toggle" class="toggle-btn" onclick="toggleLanguage()">中/EN</button>
+      <button id="theme-toggle" class="toggle-btn" onclick="toggleTheme()">☀️</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <nav id="sidebar">
+      <!-- Navigation populated by JS -->
+    </nav>
+
+    <main id="content">
+      <!-- Section content rendered by JS -->
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

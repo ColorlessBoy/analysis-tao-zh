@@ -1,0 +1,160 @@
+{
+  "chapters": [
+    {
+      "number": 1,
+      "title_en": "Introduction",
+      "title_zh": "引言",
+      "sections": [
+        {"number": "1.1", "title_en": "What Is Analysis?", "title_zh": "什么是分析？", "pdf_page": 18, "content_en": "", "content_zh": ""},
+        {"number": "1.2", "title_en": "Why Do Analysis?", "title_zh": "为什么要学分析？", "pdf_page": 18, "content_en": "", "content_zh": ""}
+      ]
+    },
+    {
+      "number": 2,
+      "title_en": "Starting at the Beginning: The Natural Numbers",
+      "title_zh": "从头开始：自然数",
+      "sections": [
+        {"number": "2.1", "title_en": "The Peano Axioms", "title_zh": "Peano 公理", "pdf_page": 12, "content_en": "", "content_zh": ""},
+        {"number": "2.2", "title_en": "Addition", "title_zh": "加法", "pdf_page": 20, "content_en": "", "content_zh": ""},
+        {"number": "2.3", "title_en": "Multiplication", "title_zh": "乘法", "pdf_page": 24, "content_en": "", "content_zh": ""}
+      ]
+    },
+    {
+      "number": 3,
+      "title_en": "Set Theory",
+      "title_zh": "集合论",
+      "sections": [
+        {"number": "3.1", "title_en": "Fundamentals", "title_zh": "基础", "pdf_page": 27, "content_en": "", "content_zh": ""},
+        {"number": "3.2", "title_en": "Russell's Paradox (Optional)", "title_zh": "罗素悖论（选读）", "pdf_page": 38, "content_en": "", "content_zh": ""},
+        {"number": "3.3", "title_en": "Functions", "title_zh": "函数", "pdf_page": 40, "content_en": "", "content_zh": ""},
+        {"number": "3.4", "title_en": "Images and Inverse Images", "title_zh": "像与逆像", "pdf_page": 47, "content_en": "", "content_zh": ""},
+        {"number": "3.5", "title_en": "Cartesian Products", "title_zh": "笛卡尔积", "pdf_page": 52, "content_en": "", "content_zh": ""},
+        {"number": "3.6", "title_en": "Cardinality of Sets", "title_zh": "集合的基数", "pdf_page": 57, "content_en": "", "content_zh": ""}
+      ]
+    },
+    {
+      "number": 4,
+      "title_en": "Integers and Rationals",
+      "title_zh": "整数与有理数",
+      "sections": [
+        {"number": "4.1", "title_en": "The Integers", "title_zh": "整数", "pdf_page": 63, "content_en": "", "content_zh": ""},
+        {"number": "4.2", "title_en": "The Rationals", "title_zh": "有理数", "pdf_page": 69, "content_en": "", "content_zh": ""},
+        {"number": "4.3", "title_en": "Absolute Value and Exponentiation", "title_zh": "绝对值与指数运算", "pdf_page": 73, "content_en": "", "content_zh": ""},
+        {"number": "4.4", "title_en": "Gaps in the Rational Numbers", "title_zh": "有理数的空隙", "pdf_page": 76, "content_en": "", "content_zh": ""}
+      ]
+    },
+    {
+      "number": 5,
+      "title_en": "The Real Numbers",
+      "title_zh": "实数",
+      "sections": [
+        {"number": "5.1", "title_en": "Cauchy Sequences", "title_zh": "柯西序列", "pdf_page": 82, "content_en": "", "content_zh": ""},
+        {"number": "5.2", "title_en": "Equivalent Cauchy Sequences", "title_zh": "等价柯西序列", "pdf_page": 86, "content_en": "", "content_zh": ""},
+        {"number": "5.3", "title_en": "The Construction of the Real Numbers", "title_zh": "实数的构造", "pdf_page": 88, "content_en": "", "content_zh": ""},
+        {"number": "5.4", "title_en": "Ordering the Reals", "title_zh": "实数的排序", "pdf_page": 95, "content_en": "", "content_zh": ""},
+        {"number": "5.5", "title_en": "The Least Upper Bound Property", "title_zh": "最小上界性质", "pdf_page": 100, "content_en": "", "content_zh": ""},
+        {"number": "5.6", "title_en": "Real Exponentiation, Part I", "title_zh": "实数指数运算（一）", "pdf_page": 104, "content_en": "", "content_zh": ""}
+      ]
+    },
+    {
+      "number": 6,
+      "title_en": "Limits of Sequences",
+      "title_zh": "数列的极限",
+      "sections": [
+        {"number": "6.1", "title_en": "Convergence and Limit Laws", "title_zh": "收敛与极限法则", "pdf_page": 109, "content_en": "", "content_zh": ""},
+        {"number": "6.2", "title_en": "The Extended Real Number System", "title_zh": "扩展实数系", "pdf_page": 115, "content_en": "", "content_zh": ""},
+        {"number": "6.3", "title_en": "Suprema and Infima of Sequences", "title_zh": "数列的上确界与下确界", "pdf_page": 118, "content_en": "", "content_zh": ""},
+        {"number": "6.4", "title_en": "Limsup, Liminf, and Limit Points", "title_zh": "上极限、下极限与极限点", "pdf_page": 120, "content_en": "", "content_zh": ""},
+        {"number": "6.5", "title_en": "Some Standard Limits", "title_zh": "一些标准极限", "pdf_page": 127, "content_en": "", "content_zh": ""},
+        {"number": "6.6", "title_en": "Subsequences", "title_zh": "子序列", "pdf_page": 128, "content_en": "", "content_zh": ""},
+        {"number": "6.7", "title_en": "Real Exponentiation, Part II", "title_zh": "实数指数运算（二）", "pdf_page": 131, "content_en": "", "content_zh": ""}
+      ]
+    },
+    {
+      "number": 7,
+      "title_en": "Series",
+      "title_zh": "级数",
+      "sections": [
+        {"number": "7.1", "title_en": "Finite Series", "title_zh": "有限级数", "pdf_page": 135, "content_en": "", "content_zh": ""},
+        {"number": "7.2", "title_en": "Infinite Series", "title_zh": "无穷级数", "pdf_page": 144, "content_en": "", "content_zh": ""},
+        {"number": "7.3", "title_en": "Sums of Non-negative Numbers", "title_zh": "非负数求和", "pdf_page": 148, "content_en": "", "content_zh": ""},
+        {"number": "7.4", "title_en": "Rearrangement of Series", "title_zh": "级数的重排", "pdf_page": 152, "content_en": "", "content_zh": ""},
+        {"number": "7.5", "title_en": "The Root and Ratio Tests", "title_zh": "根值判别法与比值判别法", "pdf_page": 155, "content_en": "", "content_zh": ""}
+      ]
+    },
+    {
+      "number": 8,
+      "title_en": "Infinite Sets",
+      "title_zh": "无限集合",
+      "sections": [
+        {"number": "8.1", "title_en": "Countability", "title_zh": "可数性", "pdf_page": 159, "content_en": "", "content_zh": ""},
+        {"number": "8.2", "title_en": "Summation on Infinite Sets", "title_zh": "无限集合上的求和", "pdf_page": 165, "content_en": "", "content_zh": ""},
+        {"number": "8.3", "title_en": "Uncountable Sets", "title_zh": "不可数集合", "pdf_page": 171, "content_en": "", "content_zh": ""},
+        {"number": "8.4", "title_en": "The Axiom of Choice", "title_zh": "选择公理", "pdf_page": 173, "content_en": "", "content_zh": ""},
+        {"number": "8.5", "title_en": "Ordered Sets", "title_zh": "有序集合", "pdf_page": 176, "content_en": "", "content_zh": ""}
+      ]
+    },
+    {
+      "number": 9,
+      "title_en": "Continuous Functions on R",
+      "title_zh": "实数轴上的连续函数",
+      "sections": [
+        {"number": "9.1",  "title_en": "Subsets of the Real Line", "title_zh": "实数集的子集", "pdf_page": 183, "content_en": "", "content_zh": ""},
+        {"number": "9.2",  "title_en": "The Algebra of Real-Valued Functions", "title_zh": "实值函数的代数", "pdf_page": 189, "content_en": "", "content_zh": ""},
+        {"number": "9.3",  "title_en": "Limiting Values of Functions", "title_zh": "函数的极限值", "pdf_page": 191, "content_en": "", "content_zh": ""},
+        {"number": "9.4",  "title_en": "Continuous Functions", "title_zh": "连续函数", "pdf_page": 197, "content_en": "", "content_zh": ""},
+        {"number": "9.5",  "title_en": "Left and Right Limits", "title_zh": "左极限与右极限", "pdf_page": 200, "content_en": "", "content_zh": ""},
+        {"number": "9.6",  "title_en": "The Maximum Principle", "title_zh": "极值原理", "pdf_page": 203, "content_en": "", "content_zh": ""},
+        {"number": "9.7",  "title_en": "The Intermediate Value Theorem", "title_zh": "介值定理", "pdf_page": 206, "content_en": "", "content_zh": ""},
+        {"number": "9.8",  "title_en": "Monotonic Functions", "title_zh": "单调函数", "pdf_page": 208, "content_en": "", "content_zh": ""},
+        {"number": "9.9",  "title_en": "Uniform Continuity", "title_zh": "一致连续", "pdf_page": 210, "content_en": "", "content_zh": ""},
+        {"number": "9.10", "title_en": "Limits at Infinity", "title_zh": "无穷远处的极限", "pdf_page": 215, "content_en": "", "content_zh": ""}
+      ]
+    },
+    {
+      "number": 10,
+      "title_en": "Differentiation of Functions",
+      "title_zh": "函数的微分",
+      "sections": [
+        {"number": "10.1", "title_en": "Basic Definitions", "title_zh": "基本定义", "pdf_page": 217, "content_en": "", "content_zh": ""},
+        {"number": "10.2", "title_en": "Local Maxima, Local Minima, and Derivatives", "title_zh": "局部极大值、局部极小值与导数", "pdf_page": 222, "content_en": "", "content_zh": ""},
+        {"number": "10.3", "title_en": "Monotone Functions and Derivatives", "title_zh": "单调函数与导数", "pdf_page": 224, "content_en": "", "content_zh": ""},
+        {"number": "10.4", "title_en": "Inverse Functions and Derivatives", "title_zh": "反函数与导数", "pdf_page": 225, "content_en": "", "content_zh": ""},
+        {"number": "10.5", "title_en": "L'Hôpital's Rule", "title_zh": "洛必达法则", "pdf_page": 228, "content_en": "", "content_zh": ""}
+      ]
+    },
+    {
+      "number": 11,
+      "title_en": "The Riemann Integral",
+      "title_zh": "黎曼积分",
+      "sections": [
+        {"number": "11.1",  "title_en": "Partitions", "title_zh": "分割", "pdf_page": 232, "content_en": "", "content_zh": ""},
+        {"number": "11.2",  "title_en": "Piecewise Constant Functions", "title_zh": "分段常数函数", "pdf_page": 235, "content_en": "", "content_zh": ""},
+        {"number": "11.3",  "title_en": "Upper and Lower Riemann Integrals", "title_zh": "上黎曼积分与下黎曼积分", "pdf_page": 238, "content_en": "", "content_zh": ""},
+        {"number": "11.4",  "title_en": "Basic Properties of the Riemann Integral", "title_zh": "黎曼积分的基本性质", "pdf_page": 242, "content_en": "", "content_zh": ""},
+        {"number": "11.5",  "title_en": "Riemann Integrability of Continuous Functions", "title_zh": "连续函数的黎曼可积性", "pdf_page": 246, "content_en": "", "content_zh": ""},
+        {"number": "11.6",  "title_en": "Riemann Integrability of Monotone Functions", "title_zh": "单调函数的黎曼可积性", "pdf_page": 249, "content_en": "", "content_zh": ""},
+        {"number": "11.7",  "title_en": "A Non-Riemann Integrable Function", "title_zh": "一个非黎曼可积的函数", "pdf_page": 251, "content_en": "", "content_zh": ""},
+        {"number": "11.8",  "title_en": "The Riemann–Stieltjes Integral", "title_zh": "黎曼-斯蒂尔吉斯积分", "pdf_page": 252, "content_en": "", "content_zh": ""},
+        {"number": "11.9",  "title_en": "The Two Fundamental Theorems of Calculus", "title_zh": "微积分基本定理", "pdf_page": 255, "content_en": "", "content_zh": ""},
+        {"number": "11.10", "title_en": "Consequences of the Fundamental Theorems", "title_zh": "基本定理的应用", "pdf_page": 259, "content_en": "", "content_zh": ""}
+      ]
+    },
+    {
+      "number": "A",
+      "title_en": "Appendix A: The Basics of Mathematical Logic",
+      "title_zh": "附录 A：数学逻辑基础",
+      "sections": [
+        {"number": "A", "title_en": "Mathematical Logic", "title_zh": "数学逻辑", "pdf_page": 265, "content_en": "", "content_zh": ""}
+      ]
+    },
+    {
+      "number": "B",
+      "title_en": "Appendix B: The Decimal System",
+      "title_zh": "附录 B：十进制",
+      "sections": [
+        {"number": "B", "title_en": "The Decimal System", "title_zh": "十进制", "pdf_page": 287, "content_en": "", "content_zh": ""}
+      ]
+    }
+  ]
+}
