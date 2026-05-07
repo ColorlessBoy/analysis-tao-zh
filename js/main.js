@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       initSection = match[2];
     }
   }
+  console.log('[main] DOMContentLoaded: hash=', hash, 'initChapter=', initChapter, 'initSection=', initSection);
   navigate(initChapter, initSection);
 
   // Wire up control buttons
@@ -171,6 +172,7 @@ function toggleChapter(chapterNum) {
  * Navigation
  * ------------------------------------------------------------ */
 function navigate(chapterNum, sectionNum) {
+  console.log('[main] navigate called: chapterNum=', chapterNum, 'sectionNum=', sectionNum);
   currentSection = { chapter: chapterNum, section: sectionNum };
 
   // Always open the chapter we're navigating to
