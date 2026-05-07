@@ -325,6 +325,8 @@ body.is-bookmarked .icon-bookmark-filled { display: block; color: var(--accent);
 .main-content {
   flex: 1;
   min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
   padding: 40px 64px 80px;
 }
 
@@ -390,6 +392,9 @@ body.is-bookmarked .icon-bookmark-filled { display: block; color: var(--accent);
   line-height: 1.9;
   color: var(--text);
   transition: color 0.25s;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .sec-body > * + * { margin-top: 1.2em; }
 .sec-body p { margin: 0; }
@@ -682,16 +687,19 @@ footer {
   }
 
   /* MathJax horizontal scroll on mobile */
-  .sec-body mjx-container[jax="CHTML"][display="false"],
-  .sec-body mjx-container[jax="SVG"][display="false"] {
+  .sec-body mjx-container {
     overflow-x: auto !important;
     max-width: 100% !important;
+    display: inline-block !important;
+    max-height: 99vh;
   }
-  .sec-body mjx-container[jax="CHTML"][display="true"],
-  .sec-body mjx-container[jax="SVG"][display="true"] {
-    overflow-x: auto !important;
-    display: block !important;
+  .sec-body mjx-container svg {
     max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  .sec-body mjx-container[jax="SVG"] > svg {
+    overflow: visible !important;
   }
 }
 
