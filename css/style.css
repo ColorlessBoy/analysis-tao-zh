@@ -588,3 +588,13 @@ body.sidebar-open .sidebar-overlay {
     max-width: 100% !important;
   }
 }
+
+/* Math wrapper classes — MathJax renders inside these */
+.math-display {
+  overflow-x: auto;
+  padding: 8px 0;
+  text-align: center;
+}
+.math-inline {
+  /* inline math needs no special layout */
+}
