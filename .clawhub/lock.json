@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "pdf-extract": {
+      "version": "1.0.0",
+      "installedAt": 1778147014311
+    },
+    "extract-formulas-from-pdf": {
+      "version": "0.4.0",
+      "installedAt": 1778147042499
+    },
+    "document-skills": {
+      "version": "0.1.2",
+      "installedAt": 1778147466037
+    }
+  }
+}
