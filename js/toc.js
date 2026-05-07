@@ -32,12 +32,14 @@ window.TOC = {
       const prefix = state.lang === 'zh' ? `第${chapter.number}章` : `Chapter ${chapter.number}`;
       chHeading.textContent = `${prefix} ${chTitle}`;
       chHeading.addEventListener('click', () => {
-        // Ensure chapter is open in sidebar first, then navigate to chapter landing
-        if (!this.openChapters.has(chapter.number)) {
+        if (this.openChapters.has(chapter.number)) {
+          this.openChapters.delete(chapter.number);
+          this._updateClasses();
+        } else {
           this.openChapters.add(chapter.number);
           this._updateClasses();
+          window.App._renderChapter(chapter.number);
         }
-        window.App._renderChapter(chapter.number);
       });
 
       const chSections = document.createElement('div');
