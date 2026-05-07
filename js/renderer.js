@@ -23,6 +23,10 @@ window.Renderer = {
     const processedBody = body ? this.renderBody(body) : '';
     const mergedBody = this.mergeConsecutiveLists(processedBody);
 
+    const pageLabel = (section.page_start && section.page_end)
+      ? `pp. ${section.page_start}–${section.page_end}`
+      : `p.${section.pdf_page}`;
+
     return `
       <header class="sec-header">
         <div class="sec-chapter-label">第${chapter.number}章 ${chTitle}</div>
@@ -33,7 +37,7 @@ window.Renderer = {
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
               <polyline points="14 2 14 8 20 8"></polyline>
             </svg>
-            PDF p.${section.pdf_page}
+            PDF ${pageLabel}
           </span>
           <span class="badge badge-lang">${langLabel}</span>
         </div>
@@ -41,6 +45,9 @@ window.Renderer = {
       <div class="sec-body">
         ${mergedBody || `<p class="empty-content">${emptyMsg}</p>`}
       </div>
+      <footer class="sec-footer">
+        <a href="https://github.com/ColorlessBoy/analysis-tao-zh/edit/main/data/sections.json" target="_blank" rel="noopener" class="edit-link">编辑此章节</a>
+      </footer>
     `;
   },
 
@@ -86,15 +93,15 @@ window.Renderer = {
    */
   _parseBlocks(text) {
     const boxPatterns = [
-      { label: 'Definition',  cls: 'definition',  zh: '定义' },
-      { label: 'Axiom',        cls: 'axiom',       zh: '公理' },
-      { label: 'Theorem',      cls: 'theorem',     zh: '定理' },
-      { label: 'Proposition',  cls: 'proposition',  zh: '命题' },
-      { label: 'Lemma',       cls: 'lemma',        zh: '引理' },
-      { label: 'Corollary',    cls: 'corollary',    zh: '推论' },
-      { label: 'Remark',       cls: 'remark',       zh: '注' },
-      { label: 'Exercise',     cls: 'exercise',     zh: '练习' },
-      { label: 'Example',      cls: 'example',      zh: '例' },
+      { label: 'Definition',  cls: 'definition prop-card',  zh: '定义' },
+      { label: 'Axiom',        cls: 'axiom prop-card',       zh: '公理' },
+      { label: 'Theorem',      cls: 'theorem prop-card',     zh: '定理' },
+      { label: 'Proposition',  cls: 'proposition prop-card',zh: '命题' },
+      { label: 'Lemma',       cls: 'lemma prop-card',       zh: '引理' },
+      { label: 'Corollary',    cls: 'corollary prop-card',   zh: '推论' },
+      { label: 'Remark',       cls: 'remark prop-card',      zh: '注' },
+      { label: 'Exercise',     cls: 'exercise prop-card',   zh: '练习' },
+      { label: 'Example',      cls: 'example prop-card',     zh: '例' },
     ];
 
     const lines = text.split('\n');
@@ -106,7 +113,7 @@ window.Renderer = {
       let matched = false;
 
       for (const { label, cls, zh } of boxPatterns) {
-        const pat = new RegExp(`^(${label}|${zh})\\s+(\\d+(?:\\.\\d+)+)\\s*(.*)$`, 'i');
+        const pat = new RegExp(`^(${label}|${zh})\\s*\\d+(?:\\.\\d+)*\\s*(.*)$`, 'i');
         const m = line.match(pat);
         if (m) {
           const bodyLines = [];

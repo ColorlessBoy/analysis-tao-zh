@@ -1,3 +1,29 @@
+/* ── MathJax vertical alignment ── */
+mjx-container {
+  vertical-align: middle !important;
+}
+
+/* ── Proposition/theorem/definition card — shared style ── */
+.prop-card {
+  /* placeholder for future per-card refinements */
+}
+
+/* ── Section footer ── */
+.sec-footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+  text-align: left;
+}
+.edit-link {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.edit-link:hover { color: var(--accent); }
+
 /* ============================================================
    CSS Custom Properties — Theming
    ============================================================ */
