@@ -228,8 +228,7 @@ function closeSidebar() {
  * ------------------------------------------------------------ */
 function renderSection() {
   const content = document.getElementById('content');
-  console.log('[main] renderSection called: sectionsData=', sectionsData !== null, 'currentSection=', JSON.stringify(currentSection));
-  if (!content || !sectionsData) { console.log('[main] renderSection early return'); return; }
+  if (!content || !sectionsData) return;
 
   const chapter = sectionsData.chapters.find(c => c.number === currentSection.chapter);
   if (!chapter) return;
