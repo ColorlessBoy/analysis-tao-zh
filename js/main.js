@@ -173,6 +173,7 @@ function toggleChapter(chapterNum) {
  * Navigation
  * ------------------------------------------------------------ */
 function navigate(chapterNum, sectionNum) {
+  console.log('[main] navigate called: chapterNum=', chapterNum, 'sectionNum=', sectionNum);
 
   currentSection = { chapter: chapterNum, section: sectionNum };
 
