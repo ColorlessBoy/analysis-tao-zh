@@ -82,7 +82,7 @@ window.App = {
     document.body.classList.add(`lang-${this.currentLang}`);
     const btn = document.getElementById('lang-toggle');
     if (btn) {
-      btn.querySelector('.lang-label').textContent = this.currentLang === 'zh' ? '中文' : 'EN';
+      btn.querySelector('.lang-label').textContent = this.currentLang === 'zh' ? '中/EN' : 'EN/中';
     }
     localStorage.setItem('lang', this.currentLang);
   },
@@ -233,9 +233,8 @@ window.App = {
     document.getElementById('lang-toggle')?.addEventListener('click', () => this.toggleLanguage());
     document.getElementById('hamburger')?.addEventListener('click', () => this.toggleSidebar());
     document.getElementById('sidebar-overlay')?.addEventListener('click', () => this._closeSidebar());
-    document.getElementById('search-close-btn')?.addEventListener('click', () => window.Search.close());
-    document.getElementById('search-btn')?.addEventListener('click', () => window.Search.open());
     document.getElementById('bookmark-btn')?.addEventListener('click', () => this.toggleBookmark());
+    document.getElementById('search-btn')?.addEventListener('click', () => window.Search.open());
 
     // Search input
     const searchInput = document.getElementById('search-input');
