@@ -32,7 +32,11 @@ window.TOC = {
       const prefix = state.lang === 'zh' ? `第${chapter.number}章` : `Chapter ${chapter.number}`;
       chHeading.textContent = `${prefix} ${chTitle}`;
       chHeading.addEventListener('click', () => {
-        // Clicking chapter heading navigates to chapter landing
+        // Ensure chapter is open in sidebar first, then navigate to chapter landing
+        if (!this.openChapters.has(chapter.number)) {
+          this.openChapters.add(chapter.number);
+          this._updateClasses();
+        }
         window.App._renderChapter(chapter.number);
       });
 
