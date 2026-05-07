@@ -31,7 +31,7 @@ window.Renderer = {
 
     return `
       <header class="sec-header">
-        <div class="sec-chapter-label">第${chapter.number}章 ${chTitle}</div>
+        <div class="sec-chapter-label">${lang === 'zh' ? `第${chapter.number}章` : `Chapter ${chapter.number}`} ${chTitle}</div>
         <h1 class="sec-title">${title}</h1>
         <div class="sec-meta">
           <span class="badge">
@@ -240,6 +240,6 @@ window.Renderer = {
    */
   progressText(chapterNum, sectionNum, sectionTitle, pdfPage, totalPages, lang) {
     const chLabel = lang === 'zh' ? `第${chapterNum}章` : `Ch ${chapterNum}`;
-    return `${chLabel} · ${sectionNum} · ${lang === 'zh' ? '第' : 'p.'}${pdfPage} / ${totalPages}页`;
+    return `${chLabel} · ${sectionNum} · p.${pdfPage} / ${totalPages}`;
   }
 };
