@@ -246,9 +246,11 @@ function renderSection() {
     </div>
   `;
 
-  // Typeset math after DOM insertion
+  // Typeset math after DOM insertion — wait for MathJax to be fully initialized
   if (window.MathJax && MathJax.typesetPromise) {
-    MathJax.typesetPromise([content]).catch(err =>
+    MathJax.startup.promise.then(() => {
+      return MathJax.typesetPromise([content]);
+    }).catch(err =>
       console.warn('[main] MathJax typeset error:', err)
     );
   }
