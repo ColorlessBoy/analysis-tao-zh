@@ -415,6 +415,7 @@ function renderBody(text) {
     { label: 'Corollary',  cls: 'corollary',   zh: '推论' },
     { label: 'Remark',     cls: 'remark',      zh: '注' },
     { label: 'Exercise',   cls: 'exercise',    zh: '练习' },
+    { label: 'Exercise',   cls: 'exercise',    zh: '习题' },
     { label: 'Example',    cls: 'example',     zh: '例' },
   ];
 
@@ -427,7 +428,7 @@ function renderBody(text) {
     let matched = false;
 
     for (const { label, cls, zh } of boxPatterns) {
-      const pat = new RegExp(`^(${label}|${zh})\\s+(\\d+\\.\\d+)\\s*(.*)$`, 'i');
+      const pat = new RegExp(`^(${label}|${zh})\\s+([A-Za-z0-9]+(?:\\.[A-Za-z0-9]+)+)\\s*(.*)$`, 'i');
       const m = line.match(pat);
       if (m) {
         const bodyLines = [];
