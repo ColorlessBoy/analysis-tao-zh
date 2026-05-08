@@ -54,7 +54,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  // Pre-open the target chapter so applyLang's renderSidebar uses correct state
+  // Pre-open the target chapter (replace default Ch1 when hash is present)
+  if (hash) openChapters.clear();
   openChapters.add(initChapter);
 
   // applyLang will render sidebar with correct chapter open
