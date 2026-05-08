@@ -793,3 +793,10 @@ footer {
   border-bottom: 1px solid var(--border);
   margin: 1.5em 0;
 }
+
+/* Bold section labels (证明, 集合论, etc. as inline term markers) */
+.section-label {
+  font-weight: 600;
+  color: var(--accent, #b36b39);
+  border-bottom: 1px solid var(--accent, #b36b39);
+}
