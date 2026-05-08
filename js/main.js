@@ -395,6 +395,11 @@ function renderBody(text) {
     return `⧫IM${inlineMathBlocks.length - 1}⧫`;
   });
 
+  // Step 2b: Normalize em-dash section dividers (——text—— → styled <div>)
+  processed = processed.replace(/^\s*——([^——]+)——\s*$/gm,
+    (_, label) => `<div class="section-divider">${label.trim()}</div>`);
+
+
   const boxPatterns = [
     { label: 'Definition',  cls: 'definition', zh: '定义' },
     { label: 'Axiom',      cls: 'axiom',       zh: '公理' },
@@ -516,8 +521,10 @@ function inlineFormat(text) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;');
 
-  // Bold *...*
-  s = s.replace(/\*([^*]+)\*/g, '<strong>$1</strong>');
+  // Bold **...** (double asterisk — skip if part of box label pattern)
+  // Only match when NOT immediately preceded by a Chinese character
+  // (Chinese + ** would be a box label, e.g. **证明**)
+  s = s.replace(/(?<![一-鿿])\*\*([^*]+)\*\*(?!\*)/g, '<strong>$1</strong>');
 
   // Italic _..._
   s = s.replace(/_([^_]+)_/g, '<em>$1</em>');
