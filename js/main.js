@@ -26,11 +26,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   await loadData();
   applyTheme();
-  applyLang();
-  renderSidebar();
 
   // Restore section from URL hash (e.g. #1.2 → chapter 1, section 1.2)
-  // Wait for loadData() to complete before navigating, so sectionsData is available
+  // Do this BEFORE applyLang so the correct chapter is already open when sidebar first renders
   const hash = window.location.hash.slice(1); // drop leading '#'
   let initChapter = 1;
   let initSection = '1.1';
@@ -55,6 +53,13 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     }
   }
+
+  // Pre-open the target chapter so applyLang's renderSidebar uses correct state
+  openChapters.add(initChapter);
+
+  // applyLang will render sidebar with correct chapter open
+  applyLang();
+
   navigate(initChapter, initSection);
 
   // Wire up control buttons
